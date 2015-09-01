@@ -4,18 +4,18 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{77DD447A-255C-4FFD-B971-1F3A4BEC6D05}</ProjectGuid>
+    <ProjectGuid>{787216D9-FE73-4CED-9C81-4453E64B78A4}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>EasyCheckout.Droid</RootNamespace>
+    <RootNamespace>EasyCheckOut.Droid</RootNamespace>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <AssemblyName>EasyCheckout.Droid</AssemblyName>
+    <AssemblyName>EasyCheckOut.Droid</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,9 +59,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EasyCheckout\EasyCheckout.csproj">
-      <Project>{A45F35DE-2844-4135-A137-46CABC0188BD}</Project>
-      <Name>EasyCheckout</Name>
+    <ProjectReference Include="..\EasyCheckOut\EasyCheckOut.csproj">
+      <Project>{28C5121D-3C26-480F-84E3-853EE05AE4F5}</Project>
+      <Name>EasyCheckOut</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace EasyCheckout
+namespace EasyCheckOut
 {
 	public class App : Application
 	{

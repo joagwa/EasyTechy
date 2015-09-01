@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace EasyCheckout.iOS
+namespace EasyCheckOut.iOS
 {
 	public class Application
 	{
