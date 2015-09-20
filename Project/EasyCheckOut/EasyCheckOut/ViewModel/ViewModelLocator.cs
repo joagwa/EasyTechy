@@ -18,21 +18,20 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace EasyCheckOut.ViewModel
 {
-    /// <summary>
-    /// This class contains static references to all the view models in the
-    /// application and provides an entry point for the bindings.
-    /// </summary>
-    public class ViewModelLocator
-    {
+	/// <summary>
+	/// This class contains static references to all the view models in the
+	/// application and provides an entry point for the bindings.
+	/// </summary>
+	public class ViewModelLocator
+	{
 		//Pages key
 		public const string HomePageKey = "HomePage";
 		public const string LoginPageKey = "LoginPage";
 
-
-        /// <summary>
-        /// Initializes a new instance of the ViewModelLocator class.
-        /// </summary>
-        public ViewModelLocator()
+		/// <summary>
+		/// Initializes a new instance of the ViewModelLocator class.
+		/// </summary>
+		public ViewModelLocator ()
 		{
 
 			ServiceLocator.SetLocatorProvider (() => SimpleIoc.Default);
@@ -52,25 +51,33 @@ namespace EasyCheckOut.ViewModel
 			//SimpleIoc.Default.Register<MainViewModel>();
 
 			//Register every viewModel to the viewModel locator
-			SimpleIoc.Default.Register<HomePageViewModel> (() => 
-				{
-					return new HomePageViewModel (
-						SimpleIoc.Default.GetInstance<IMyNavigationService> ()
-					);
-				});
+			SimpleIoc.Default.Register<HomePageViewModel> (() => {
+				return new HomePageViewModel (
+					SimpleIoc.Default.GetInstance<IMyNavigationService> ()
+				);
+			});
+			SimpleIoc.Default.Register<LoginPageViewModel> (() => {
+				return new LoginPageViewModel (
+					SimpleIoc.Default.GetInstance<IMyNavigationService> ()
+				);
+			});
 		}
 
-				public HomePageViewModel HomePage
-        {
-            get
-            {
-						return ServiceLocator.Current.GetInstance<HomePageViewModel>();
-            }
-        }
-        
-        public static void Cleanup()
-        {
-            // TODO Clear the ViewModels
-        }
-    }
+		public HomePageViewModel HomePage {
+			get {
+				return ServiceLocator.Current.GetInstance<HomePageViewModel> ();
+			}
+		}
+
+		public LoginPageViewModel LoginPage{
+			get{ 
+				return ServiceLocator.Current.GetInstance<LoginPageViewModel> ();
+			}
+		}
+
+		public static void Cleanup ()
+		{
+			// TODO Clear the ViewModels
+		}
+	}
 }

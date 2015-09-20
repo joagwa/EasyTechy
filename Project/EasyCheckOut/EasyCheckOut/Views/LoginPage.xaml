@@ -4,8 +4,12 @@
 				x:Class="EasyCheckOut.LoginPage">
 	<StackLayout>
 		<Label Text="User Name :" />
-		<Entry />
+		<Entry Text="{Binding Username}"/>
 		<Label Text="Password :" />
-		<Entry />
+		<Entry Text="{Binding Password}"/>
+		<Label Text="Your Username :" />
+		<Label Text="{Binding Username}" />
+		<Label Text="Your Password :" />
+		<Label Text="{Binding Password}" />
 	</StackLayout>
 </BaseView>
