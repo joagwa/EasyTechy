@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<BaseView xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="EasyCheckOut.Homepage" 
+			 Title="Easy Checkout" 
+			 BackgroundColor="White">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Name="Login" Order="Primary" Command = "{Binding GoToLoginPage}" />
+	</ContentPage.ToolbarItems>
+	<Grid VerticalOptions="FillAndExpand" 
+		  HorizontalOptions="FillAndExpand" 
+		  RowSpacing="0" 
+		  ColumnSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="6*" />
+			<RowDefinition Height="4*" />
+		</Grid.RowDefinitions>
+		<BoxView Color="White" Grid.Row="0" />
+		<Grid Grid.Row="1" RowSpacing="0" ColumnSpacing="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="5*" />
+				<RowDefinition Height="5*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="3*" />
+				<ColumnDefinition Width="3*" />
+				<ColumnDefinition Width="3*" />
+			</Grid.ColumnDefinitions>
+			<Button Command="{Binding GoToLoginPage}" Text="Button1" Grid.Row="0" Grid.Column="0" />
+			<BoxView Color="Blue" Grid.Row="0" Grid.Column="1" />
+			<BoxView Color="Red" Grid.Row="0" Grid.Column="2" />
+			<BoxView Color="Black" Grid.Row="1" Grid.Column="0" />
+			<BoxView Color="Green" Grid.Row="1" Grid.Column="1" />
+			<BoxView Color="Purple" Grid.Row="1" Grid.Column="2" />
+		</Grid>
+	</Grid>
+</BaseView>
