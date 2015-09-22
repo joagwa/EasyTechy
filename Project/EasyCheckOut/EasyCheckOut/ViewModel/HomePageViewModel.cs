@@ -21,8 +21,16 @@ namespace EasyCheckOut.ViewModel
     {
 		private IMyNavigationService navigationService;
 
-		public ICommand GoToLoginPage { get; private set; }
 		public string Param { get; set; }
+
+		public ICommand GoToLoginPage { get; private set; }
+		public ICommand GoToBuylistPage { get; private set; }
+		public ICommand GoToCartPage { get; private set; }
+		public ICommand GoToConnectPage { get; private set; }
+		public ICommand GoToReceivePage { get; private set; }
+		public ICommand GoToMapPage { get; private set; }
+		public ICommand GoToScannerPage { get; private set; }
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -41,6 +49,30 @@ namespace EasyCheckOut.ViewModel
 			GoToLoginPage = new Command (param => {
 				var x = param as String;
 				this.navigationService.NavigateTo (ViewModelLocator.LoginPageKey);
+			});
+
+			GoToBuylistPage = new Command (() => {
+				this.navigationService.NavigateTo (ViewModelLocator.BuylistPageKey);
+			});
+
+			GoToCartPage = new Command (() => {
+				this.navigationService.NavigateTo (ViewModelLocator.CartPageKey);	
+			});
+
+			GoToConnectPage = new Command (() => {
+				this.navigationService.NavigateTo(ViewModelLocator.ConnectPageKey);	
+			});
+
+			GoToReceivePage = new Command (() => {
+				this.navigationService.NavigateTo(ViewModelLocator.ReceivePageKey);
+			});
+
+			GoToMapPage = new Command (() => {
+				this.navigationService.NavigateTo(ViewModelLocator.MapPageKey);
+			});
+
+			GoToScannerPage = new Command (() => {
+				this.navigationService.NavigateTo(ViewModelLocator.ScannerPageKey);
 			});
 		}
 

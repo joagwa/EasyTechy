@@ -29,6 +29,14 @@ namespace EasyCheckOut
 			nav = new NavigationService ();
 			nav.Configure (ViewModelLocator.HomePageKey, typeof(Homepage));
 			nav.Configure (ViewModelLocator.LoginPageKey, typeof(LoginPage));
+			nav.Configure (ViewModelLocator.SignupPageKey, typeof(SignupPage));
+			nav.Configure (ViewModelLocator.BuylistPageKey, typeof(BuylistPage));
+			nav.Configure (ViewModelLocator.CartPageKey, typeof(CartPage));
+			nav.Configure (ViewModelLocator.ConnectPageKey, typeof(ConnectPage));
+			nav.Configure (ViewModelLocator.MapPageKey, typeof(MapPage));
+			nav.Configure (ViewModelLocator.ReceivePageKey, typeof(ReceivePage));
+			nav.Configure (ViewModelLocator.ScannerPageKey, typeof(ScannerPage));
+
 			SimpleIoc.Default.Register<IMyNavigationService> (() => nav, true);
 			var navPage = new NavigationPage (new Homepage ());
 			nav.Initialize (navPage);
