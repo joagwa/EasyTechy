@@ -22,7 +22,7 @@ namespace EasyCheckOut.ViewModel
 		private IMyNavigationService navigationService;
 
 		public ICommand GoToLoginPage { get; private set; }
-
+		public string Param { get; set; }
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
@@ -38,8 +38,11 @@ namespace EasyCheckOut.ViewModel
             ////    // Code runs "for real"
             ////}
 
-			GoToLoginPage = new Command (() => this.navigationService.NavigateTo (ViewModelLocator.LoginPageKey));
-        }
+			GoToLoginPage = new Command (param => {
+				var x = param as String;
+				this.navigationService.NavigateTo (ViewModelLocator.LoginPageKey);
+			});
+		}
 
 		public void OnAppearing()
 		{

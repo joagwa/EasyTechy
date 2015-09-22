@@ -15,6 +15,7 @@ namespace EasyCheckOut
 			base.Init ();
 			BindingContext = App.Locator.HomePage;
 
+//			ServiceLocator.Current.GetInstance<HomePageViewModel> ().Param = param;
 			//Button clicked event for navigating to login page
 //			Button1.Clicked += (sender, args) => {
 //				Navigation.PushAsync (new LoginPage ());
@@ -27,10 +28,18 @@ namespace EasyCheckOut
 
 		protected override void OnAppearing()
 		{
-			base.OnAppearing ();
 			var vm = ServiceLocator.Current.GetInstance<HomePageViewModel> ();
+			base.OnAppearing ();
 			vm.OnAppearing ();
 		}
+
+//		void OnTapGestureRecognizerTapped(object sender, EventArgs args) {
+//			var vm = ServiceLocator.Current.GetInstance<HomePageViewModel> ();
+//			vm.GoToLoginPage.Execute();
+//		}
+
+	
 	}
+
 }
 

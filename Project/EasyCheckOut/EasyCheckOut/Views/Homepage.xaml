@@ -3,7 +3,7 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			 x:Class="EasyCheckOut.Homepage" 
 			 Title="Easy Checkout" 
-			 BackgroundColor="White">
+			 BackgroundColor="white">
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Name="Login" Order="Primary" Command = "{Binding GoToLoginPage}" />
 	</ContentPage.ToolbarItems>
@@ -26,8 +26,18 @@
 				<ColumnDefinition Width="3*" />
 				<ColumnDefinition Width="3*" />
 			</Grid.ColumnDefinitions>
-			<Button Command="{Binding GoToLoginPage}" Text="Button1" Grid.Row="0" Grid.Column="0" />
-			<BoxView Color="Blue" Grid.Row="0" Grid.Column="1" />
+
+			<Image Source="Icon-76.png" Grid.Row="0" Grid.Column="0" BackgroundColor="#FF6A00">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GoToLoginPage}" CommandParameter="test"/>
+				</Image.GestureRecognizers>
+			</Image>
+
+			<BoxView Color="Aqua" Grid.Row="0" Grid.Column="1">
+				<BoxView.GestureRecognizers>
+<!--					<TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" CommandParameter="test"/>-->
+				</BoxView.GestureRecognizers>
+			</BoxView>
 			<BoxView Color="Red" Grid.Row="0" Grid.Column="2" />
 			<BoxView Color="Black" Grid.Row="1" Grid.Column="0" />
 			<BoxView Color="Green" Grid.Row="1" Grid.Column="1" />
