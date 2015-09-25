@@ -37,7 +37,11 @@
 			<Button Text="Scanner" Command="{Binding GoToScannerPage}" Grid.Row="0" Grid.Column="2" />
 			<Button Text="Map" Command="{Binding GoToMapPage}" Grid.Row="1" Grid.Column="0" />
 			<Button Text="Buylist" Command="{Binding GoToBuylistPage}" Grid.Row="1" Grid.Column="1" />
-			<Button Text="Receive" Command="{Binding GoToReceivePage}" Grid.Row="1" Grid.Column="2" />
+			<Image Source="e-receipt.png" Grid.Row="1" Grid.Column="2" BackgroundColor="#FF6A00">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GoToCartPage}" CommandParameter="test"/>
+				</Image.GestureRecognizers>
+			</Image>
 		</Grid>
 	</Grid>
 </BaseView>
