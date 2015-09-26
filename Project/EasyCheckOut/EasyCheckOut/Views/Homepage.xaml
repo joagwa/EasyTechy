@@ -27,22 +27,35 @@
 				<ColumnDefinition Width="3*" />
 			</Grid.ColumnDefinitions>
 
-			<Button Text="Cart" Grid.Row="0" Grid.Column="0" Command="{Binding GoToCartPage}" CommandParameter="test">
-
-			</Button>
-<!--			<Image Source="Icon-76.png" Grid.Row="0" Grid.Column="0" BackgroundColor="#FF6A00">
+			<Image Source="cart.png" Grid.Row="0" Grid.Column="0" BackgroundColor="#D7D4D4">
 				<Image.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding GoToCartPage}" CommandParameter="test"/>
+					<TapGestureRecognizer Command="{Binding GoToCartPage}"/>
 				</Image.GestureRecognizers>
-			</Image>-->
+			</Image>
 
-			<Button Text="Connect" Command="{Binding GoToConnectPage}" Grid.Row="0" Grid.Column="1" />
-			<Button Text="Scanner" Command="{Binding GoToScannerPage}" Grid.Row="0" Grid.Column="2" />
-			<Button Text="Map" Command="{Binding GoToMapPage}" Grid.Row="1" Grid.Column="0" />
-			<Button Text="Buylist" Command="{Binding GoToBuylistPage}" Grid.Row="1" Grid.Column="1" />
-			<Image Source="e-receipt.png" Grid.Row="1" Grid.Column="2" BackgroundColor="#FF6A00">
+			<Image Source="connect.png" Grid.Row="0" Grid.Column="1" BackgroundColor="#D7D4D4">
 				<Image.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding GoToCartPage}" CommandParameter="test"/>
+					<TapGestureRecognizer Command="{Binding GoToConnectPage}" />
+				</Image.GestureRecognizers>
+			</Image>
+			<Image Source="scanner.png" Grid.Row="0" Grid.Column="2" BackgroundColor="#D7D4D4">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GoToScannerPage}" />
+				</Image.GestureRecognizers>
+			</Image>
+			<Image Source="map.png" Grid.Row="1" Grid.Column="0" BackgroundColor="#D7D4D4">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GoToMapPage}" />
+				</Image.GestureRecognizers>
+			</Image>
+			<Image Source="to-buy.png" Grid.Row="1" Grid.Column="1" BackgroundColor="#D7D4D4">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GoToBuylistPage}" />
+				</Image.GestureRecognizers>
+			</Image>
+			<Image Source="e-receipt.png" Grid.Row="1" Grid.Column="2" BackgroundColor="#D7D4D4">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GoToReceivePage}" />
 				</Image.GestureRecognizers>
 			</Image>
 		</Grid>
