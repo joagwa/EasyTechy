@@ -27,11 +27,14 @@
 				<ColumnDefinition Width="3*" />
 			</Grid.ColumnDefinitions>
 
-			<Image Source="Icon-76.png" Grid.Row="0" Grid.Column="0" BackgroundColor="#FF6A00">
+			<Button Text="Cart" Grid.Row="0" Grid.Column="0" Command="{Binding GoToCartPage}" CommandParameter="test">
+
+			</Button>
+<!--			<Image Source="Icon-76.png" Grid.Row="0" Grid.Column="0" BackgroundColor="#FF6A00">
 				<Image.GestureRecognizers>
 					<TapGestureRecognizer Command="{Binding GoToCartPage}" CommandParameter="test"/>
 				</Image.GestureRecognizers>
-			</Image>
+			</Image>-->
 
 			<Button Text="Connect" Command="{Binding GoToConnectPage}" Grid.Row="0" Grid.Column="1" />
 			<Button Text="Scanner" Command="{Binding GoToScannerPage}" Grid.Row="0" Grid.Column="2" />

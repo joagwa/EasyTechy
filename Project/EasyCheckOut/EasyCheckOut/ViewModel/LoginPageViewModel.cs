@@ -9,6 +9,8 @@ namespace EasyCheckOut.ViewModel
 	{
 		private IMyNavigationService navigationService;
 
+		public ICommand GoToSignupPage { get; private set; }
+
 		private String username;
 		public String Username
 		{
@@ -32,6 +34,10 @@ namespace EasyCheckOut.ViewModel
 		public LoginPageViewModel (IMyNavigationService navigationService)
 		{
 			this.navigationService = navigationService;
+
+			GoToSignupPage = new Command (() => {
+				this.navigationService.NavigateTo(ViewModelLocator.SignupPageKey);
+			});
 
 		}
 
