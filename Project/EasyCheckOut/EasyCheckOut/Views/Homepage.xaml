@@ -27,17 +27,26 @@
 				<ColumnDefinition Width="3*" />
 			</Grid.ColumnDefinitions>
 
-			<Image Source="cart.png" Grid.Row="0" Grid.Column="0" BackgroundColor="#D7D4D4">
-				<Image.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding GoToCartPage}"/>
-				</Image.GestureRecognizers>
-			</Image>
+			<StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#D7D4D4">
+				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
+					<Image Source="cart 1.png" HeightRequest="50" WidthRequest="50" />
+					<Label Text="Cart" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
+				</StackLayout>
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding GoToCartPage}"/>
+					</StackLayout.GestureRecognizers>
+			</StackLayout>
 
-			<Image Source="connect.png" Grid.Row="0" Grid.Column="1" BackgroundColor="#D7D4D4">
-				<Image.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding GoToConnectPage}" />
-				</Image.GestureRecognizers>
-			</Image>
+			<StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="#D7D4D4">
+				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
+					<Image Source="connect 1.png" HeightRequest="50" WidthRequest="50" />
+					<Label Text="Connect" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
+				</StackLayout>
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding GoToConnectPage}"/>
+					</StackLayout.GestureRecognizers>
+			</StackLayout>
+
 			<Image Source="scanner.png" Grid.Row="0" Grid.Column="2" BackgroundColor="#D7D4D4">
 				<Image.GestureRecognizers>
 					<TapGestureRecognizer Command="{Binding GoToScannerPage}" />

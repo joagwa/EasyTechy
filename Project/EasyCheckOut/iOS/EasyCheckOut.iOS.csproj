@@ -127,6 +127,8 @@
     <BundleResource Include="Resources\scanner.png" />
     <BundleResource Include="Resources\to-buy.png" />
     <BundleResource Include="Resources\cart.png" />
+    <BundleResource Include="Resources\cart 1.png" />
+    <BundleResource Include="Resources\connect 1.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
