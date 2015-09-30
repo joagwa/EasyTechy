@@ -4,5 +4,9 @@
 			x:Class="EasyCheckOut.ScannerPage"
 			Title="Scanner">
 
+
+	<StackLayout>
+		<Button Text="Scan an apple" Command="{Binding ScanItemToCart}" />
+	</StackLayout>
 	
 </BaseView>

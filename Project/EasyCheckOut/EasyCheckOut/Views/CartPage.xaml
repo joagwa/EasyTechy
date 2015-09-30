@@ -6,7 +6,7 @@
 	<StackLayout>
 		<ScrollView>
 			<StackLayout Padding="10">
-				<ListView x:Name="CartListView" ItemsSource="{Binding ItemList, Mode=TwoWay}" >
+				<ListView ItemsSource="{Binding ItemList, Mode=TwoWay}" >
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell>

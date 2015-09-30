@@ -8,11 +8,11 @@ using EasyCheckOut;
 
 namespace EasyCheckOut
 {
-	public class CartItemdatabase
+	public class ECOdatabase
 	{
 		SQLiteConnection database;
 
-		public CartItemdatabase ()
+		public ECOdatabase ()
 		{
 			database = DependencyService.Get<ISqlite> ().GetConnection ();
 
@@ -20,34 +20,39 @@ namespace EasyCheckOut
 			//Create a CartItem table if there is no such table
 			if (database.TableMappings.All(t => t.MappedType.Name != typeof(CartItem).Name)) {
 //			if (!TableExist("CartItem")){
+
+				//Create cartitem table
 				database.CreateTable<CartItem> ();
+
+				//Create user table
+				database.CreateTable<User> ();
 				database.Commit ();
 
-				CartItem item1 = new CartItem ("Apple", 4.00);
-				CartItem item2 = new CartItem ("Orange", 3.50);
-				CartItem item3 = new CartItem ("Banana", 5.00);
-				CartItem item4 = new CartItem ("Grape", 9.00);
-				CartItem item5 = new CartItem ("Water", 2.00);
-
-				InsertItem (item1);
-				InsertItem (item2);
-				InsertItem (item3);
-				InsertItem (item4);
-				InsertItem (item5);
 			}
 		}
 
-		public List<CartItem> GetAll(){
+		//Function for cart item table
+		public List<CartItem> GetCartItemAll(){
 			var items = database.Table<CartItem> ().ToList<CartItem> ();
 			return items;
 		}
-
-		public int InsertItem(CartItem item){
+			
+		public int InsertItemToCart(CartItem item){
 			return database.Insert (item);
 		}
 
-		public int DeleteItem(CartItem item){
+		public int DeleteItemInCart(CartItem item){
 			return database.Delete<CartItem>(item.itemID);
+		}
+
+		//Function for user table
+		public int ValidateUser(string username, string password){
+			var rowcount = database.Query<User> ("Select * from User where UserName = ? and UserPassword = ?", username, password);
+			return rowcount.Count ();
+		}
+
+		public int InsertItemToUser(User user){
+			return database.Insert (user);
 		}
 			
 	}

@@ -8,6 +8,8 @@ namespace EasyCheckOut
 {
 	public class App : Application
 	{
+		public static bool LoggedIn { get; set; }
+
 		private static ViewModelLocator _locator;
 		private static NavigationService nav;
 		public static ViewModelLocator Locator
@@ -20,6 +22,8 @@ namespace EasyCheckOut
 
 		public App ()
 		{
+			LoggedIn = false;
+
 			// The root page of your application
 			MainPage = GetHomePage();
 		}

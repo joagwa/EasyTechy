@@ -9,8 +9,11 @@ namespace EasyCheckOut
 {
 	public partial class Homepage : BaseView
 	{
+		ToolbarItem Logout;
+
 		public Homepage ()
 		{
+			
 			InitializeComponent ();
 			base.Init ();
 			BindingContext = App.Locator.HomePage;
@@ -24,6 +27,14 @@ namespace EasyCheckOut
 //			LoginButton.Clicked += (sender, args) => {
 //				Navigation.PushAsync (new LoginPage ());
 //			};
+
+			Logout = new ToolbarItem ("Logout", null, async() => 
+			{
+				ToolbarItems.Remove(Logout);
+					await Navigation.PushAsync(new Homepage());
+			}
+			
+			);
 		}
 
 		protected override void OnAppearing()
@@ -31,6 +42,12 @@ namespace EasyCheckOut
 			var vm = ServiceLocator.Current.GetInstance<HomePageViewModel> ();
 			base.OnAppearing ();
 			vm.OnAppearing ();
+
+
+			if (App.LoggedIn) {
+				ToolbarItems.Remove (LoginToolBar);
+				ToolbarItems.Add (Logout);
+			} 
 		}
 
 //		void OnTapGestureRecognizerTapped(object sender, EventArgs args) {

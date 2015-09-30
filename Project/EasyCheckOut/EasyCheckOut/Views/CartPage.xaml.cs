@@ -4,8 +4,6 @@ using Xamarin.Forms;
 using EasyCheckOut.ViewModel;
 using Microsoft.Practices.ServiceLocation;
 
-using Xamarin.Forms;
-
 namespace EasyCheckOut
 {
 	public partial class CartPage : BaseView

@@ -10,6 +10,12 @@ namespace EasyCheckOut
 		public ScannerPage ()
 		{
 			InitializeComponent ();
+			base.Init ();
+			BindingContext = App.Locator.ScannerPage;
+		}
+
+		protected override void OnAppearing(){
+		
 		}
 	}
 }

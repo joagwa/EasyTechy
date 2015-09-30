@@ -11,6 +11,17 @@ namespace EasyCheckOut.ViewModel
 
 		public ICommand GoToSignupPage { get; private set; }
 
+		public ICommand Login { get; private set; }
+
+		private bool loggedin;
+		public bool LoggedIn{
+			get { return loggedin; }
+			set{ 
+				loggedin = value;
+				RaisePropertyChanged (() => LoggedIn);
+			}
+		}
+
 		private String username;
 		public String Username
 		{
@@ -31,12 +42,27 @@ namespace EasyCheckOut.ViewModel
 			}
 		}
 
+
+
 		public LoginPageViewModel (IMyNavigationService navigationService)
 		{
 			this.navigationService = navigationService;
 
+			LoggedIn = App.LoggedIn;
+
 			GoToSignupPage = new Command (() => {
 				this.navigationService.NavigateTo(ViewModelLocator.SignupPageKey);
+			});
+
+			Login = new Command (() => {
+				var database = new ECOdatabase();
+				int rowcount = database.ValidateUser(Username, Password);
+				if (rowcount == 0){
+					App.LoggedIn = false;
+				}else{
+					App.LoggedIn = true;
+					this.navigationService.NavigateTo(ViewModelLocator.HomePageKey);
+				}
 			});
 
 		}
@@ -44,11 +70,8 @@ namespace EasyCheckOut.ViewModel
 
 		public void OnAppearing()
 		{
-			username = null;
-			password = null;
-			RaisePropertyChanged (() => Username);
-			RaisePropertyChanged (() => Password);
-			
+			Username = null;
+			Password = null;			
 		}
 	}
 }

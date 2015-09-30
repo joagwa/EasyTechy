@@ -27,8 +27,8 @@ namespace EasyCheckOut.ViewModel
 
 		public void OnApperaing()
 		{
-			var database = new CartItemdatabase ();
-			ItemList = new ObservableCollection<CartItem> (database.GetAll ());
+			var database = new ECOdatabase ();
+			ItemList = new ObservableCollection<CartItem> (database.GetCartItemAll ());
 		}
 	}
 }

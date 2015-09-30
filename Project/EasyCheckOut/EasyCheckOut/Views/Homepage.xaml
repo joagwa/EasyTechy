@@ -5,7 +5,7 @@
 			 Title="Easy Checkout" 
 			 BackgroundColor="White">
 	<ContentPage.ToolbarItems>
-		<ToolbarItem Name="Login" Order="Primary" Command = "{Binding GoToLoginPage}" />
+		<ToolbarItem x:Name="LoginToolBar" Name="Login" Order="Primary" Command="{Binding GoToLoginPage}" />
 	</ContentPage.ToolbarItems>
 	<Grid VerticalOptions="FillAndExpand" 
 		  HorizontalOptions="FillAndExpand" 
@@ -16,7 +16,7 @@
 			<RowDefinition Height="4*" />
 		</Grid.RowDefinitions>
 		<BoxView Color="Fuchsia" Grid.Row="0" />
-		<Grid Grid.Row="1" RowSpacing="0" ColumnSpacing="0">
+		<Grid Grid.Row="1" RowSpacing="0" ColumnSpacing="0" >
 			<Grid.RowDefinitions>
 				<RowDefinition Height="5*" />
 				<RowDefinition Height="5*" />
@@ -29,12 +29,12 @@
 
 			<StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#D7D4D4">
 				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
-					<Image Source="cart 1.png" HeightRequest="50" WidthRequest="50" />
+					<Image Source="cart 1.png" HeightRequest="50" WidthRequest="50"/>
 					<Label Text="Cart" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
 				</StackLayout>
-					<StackLayout.GestureRecognizers>
-						<TapGestureRecognizer Command="{Binding GoToCartPage}"/>
-					</StackLayout.GestureRecognizers>
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding GoToCartPage}"/>
+				</StackLayout.GestureRecognizers>
 			</StackLayout>
 
 			<StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="#D7D4D4">
