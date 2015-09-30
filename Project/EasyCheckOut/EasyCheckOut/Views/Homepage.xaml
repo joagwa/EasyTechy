@@ -47,26 +47,43 @@
 					</StackLayout.GestureRecognizers>
 			</StackLayout>
 
-			<Image Source="scanner.png" Grid.Row="0" Grid.Column="2" BackgroundColor="#D7D4D4">
-				<Image.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding GoToScannerPage}" />
-				</Image.GestureRecognizers>
-			</Image>
-			<Image Source="map.png" Grid.Row="1" Grid.Column="0" BackgroundColor="#D7D4D4">
-				<Image.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding GoToMapPage}" />
-				</Image.GestureRecognizers>
-			</Image>
-			<Image Source="to-buy.png" Grid.Row="1" Grid.Column="1" BackgroundColor="#D7D4D4">
-				<Image.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding GoToBuylistPage}" />
-				</Image.GestureRecognizers>
-			</Image>
-			<Image Source="e-receipt.png" Grid.Row="1" Grid.Column="2" BackgroundColor="#D7D4D4">
-				<Image.GestureRecognizers>
-					<TapGestureRecognizer Command="{Binding GoToReceivePage}" />
-				</Image.GestureRecognizers>
-			</Image>
+			<StackLayout Grid.Row="0" Grid.Column="2" BackgroundColor="#D7D4D4">
+				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
+					<Image Source="scanner.png" HeightRequest="50" WidthRequest="50" />
+					<Label Text="Scanner" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
+				</StackLayout>
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding GoToScannerPage}"/>
+					</StackLayout.GestureRecognizers>
+			</StackLayout>
+
+			<StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="#D7D4D4">
+				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
+					<Image Source="map.png" HeightRequest="50" WidthRequest="50" />
+					<Label Text="Map" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
+				</StackLayout>
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding GoToMapPage}"/>
+					</StackLayout.GestureRecognizers>
+			</StackLayout>
+			<StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="#D7D4D4">
+				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
+					<Image Source="to-buy.png" HeightRequest="50" WidthRequest="50" />
+					<Label Text="To-buy" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
+				</StackLayout>
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding GoToBuylistPage}"/>
+					</StackLayout.GestureRecognizers>
+			</StackLayout>
+			<StackLayout Grid.Row="1" Grid.Column="2" BackgroundColor="#D7D4D4">
+				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
+					<Image Source="e-receipt.png" HeightRequest="50" WidthRequest="50" />
+					<Label Text="e-Receipt" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
+				</StackLayout>
+					<StackLayout.GestureRecognizers>
+						<TapGestureRecognizer Command="{Binding GoToReceivePage}"/>
+					</StackLayout.GestureRecognizers>
+			</StackLayout>
 		</Grid>
 	</Grid>
 </BaseView>
