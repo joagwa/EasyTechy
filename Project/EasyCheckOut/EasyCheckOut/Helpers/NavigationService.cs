@@ -127,8 +127,11 @@ namespace EasyCheckOut
 						if (modal)
 						{
 							wasModal = true;
-							_navigation.Navigation.PushModalAsync(page);
-							NavigationPage.SetHasNavigationBar(_navigation, true);
+//							_navigation.Navigation.PopToRootAsync();
+							NavigationPage.SetHasBackButton(page, false);
+							_navigation.Navigation.PushAsync(page);
+//							_navigation.Navigation.PushModalAsync(page);
+//							NavigationPage.SetHasNavigationBar(_navigation, true);
 						}
 						else
 						{

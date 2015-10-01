@@ -11,7 +11,7 @@ namespace EasyCheckOut.ViewModel
 	{
 		private IMyNavigationService navigationService;
 
-		private ObservableCollection<CartItem> itemList{ get; set; }
+		private ObservableCollection<CartItem> itemList;
 		public ObservableCollection<CartItem> ItemList{
 			get { return itemList; }
 			set {

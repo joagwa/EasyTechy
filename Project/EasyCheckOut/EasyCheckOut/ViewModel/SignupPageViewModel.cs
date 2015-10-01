@@ -81,7 +81,7 @@ namespace EasyCheckOut.ViewModel
 					var database = new ECOdatabase();
 					database.InsertItemToUser(newUser);
 
-					this.navigationService.NavigateTo(ViewModelLocator.HomePageKey);
+					this.navigationService.NavigateToModal(ViewModelLocator.HomePageKey);
 				}
 			});
 		}

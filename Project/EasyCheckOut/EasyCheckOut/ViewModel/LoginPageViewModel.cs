@@ -61,7 +61,9 @@ namespace EasyCheckOut.ViewModel
 					App.LoggedIn = false;
 				}else{
 					App.LoggedIn = true;
-					this.navigationService.NavigateTo(ViewModelLocator.HomePageKey);
+
+					//Navigate to homepage without back key
+					this.navigationService.NavigateToModal(ViewModelLocator.HomePageKey);
 				}
 			});
 
@@ -70,6 +72,7 @@ namespace EasyCheckOut.ViewModel
 
 		public void OnAppearing()
 		{
+			LoggedIn = App.LoggedIn;
 			Username = null;
 			Password = null;			
 		}

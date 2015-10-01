@@ -31,6 +31,8 @@ namespace EasyCheckOut
 		public Page GetHomePage ()
 		{
 			nav = new NavigationService ();
+
+
 			nav.Configure (ViewModelLocator.HomePageKey, typeof(Homepage));
 			nav.Configure (ViewModelLocator.LoginPageKey, typeof(LoginPage));
 			nav.Configure (ViewModelLocator.SignupPageKey, typeof(SignupPage));

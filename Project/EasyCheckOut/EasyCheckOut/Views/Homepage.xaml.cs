@@ -45,9 +45,11 @@ namespace EasyCheckOut
 
 
 			if (App.LoggedIn) {
-				ToolbarItems.Remove (LoginToolBar);
-				ToolbarItems.Add (Logout);
-			} 
+//				ToolbarItems.Remove (LoginToolBar);
+//				ToolbarItems.Add (Logout);
+			}
+
+//			Navigation.
 		}
 
 //		void OnTapGestureRecognizerTapped(object sender, EventArgs args) {
