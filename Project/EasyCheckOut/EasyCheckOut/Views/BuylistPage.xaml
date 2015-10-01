@@ -4,5 +4,54 @@
 			x:Class="EasyCheckOut.BuylistPage"
 			Title="Buy List">
 
+	<StackLayout>
+		<ScrollView>
+			<StackLayout>
+				<StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center">
+					<Entry Placeholder="Search Items" WidthRequest="280" />
+					<Button Text="Cancel" />
+				</StackLayout>
+				<StackLayout HeightRequest="200">
+					<ScrollView>
+				
+					<ListView>
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+
+<!--								my code goes here.....-->
+
+
+
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+					</ScrollView>
+				</StackLayout>
+
+				<Label Text="Select items" HorizontalOptions="Center" />
+				<StackLayout HeightRequest="200">
+					<ScrollView>
+					<ListView>
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+
+<!--								my code goes here.....-->
+
+
+
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+					</ScrollView>
+				</StackLayout>
+
+			</StackLayout>
+		</ScrollView>
+	</StackLayout>
+
 
 </BaseView>

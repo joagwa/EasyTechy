@@ -23,12 +23,18 @@ namespace EasyCheckOut
 
 				//Create cartitem table
 				database.CreateTable<CartItem> ();
+				database.Commit ();
 
+			}
+
+			if (database.TableMappings.All(t => t.MappedType.Name != typeof(User).Name)) {
 				//Create user table
 				database.CreateTable<User> ();
 				database.Commit ();
 
 			}
+
+
 		}
 
 		//Function for cart item table
