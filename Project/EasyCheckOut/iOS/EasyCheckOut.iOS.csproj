@@ -121,14 +121,14 @@
     <BundleResource Include="Resources\Icon-Small-40.png" />
     <BundleResource Include="Resources\Icon-Small-40%402x.png" />
     <BundleResource Include="Resources\Icon-Small-40%403x.png" />
-    <BundleResource Include="Resources\e-receipt.png" />
     <BundleResource Include="Resources\connect.png" />
-    <BundleResource Include="Resources\map.png" />
-    <BundleResource Include="Resources\scanner.png" />
-    <BundleResource Include="Resources\to-buy.png" />
     <BundleResource Include="Resources\cart.png" />
     <BundleResource Include="Resources\cart 1.png" />
     <BundleResource Include="Resources\connect 1.png" />
+    <BundleResource Include="Resources\map.png" />
+    <BundleResource Include="Resources\scanner.png" />
+    <BundleResource Include="Resources\to-buy.png" />
+    <BundleResource Include="Resources\e-receipt.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
