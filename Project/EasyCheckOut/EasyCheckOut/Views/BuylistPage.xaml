@@ -17,7 +17,7 @@
 				<SearchBar Placeholder="Search">
 				</SearchBar>
 				<StackLayout >				
-					<ListView x:Name="buylist" ItemsSource="{Binding BuyList, Mode=TwoWay}" ItemSelected="OnSelection">
+					<ListView x:Name="buylist" ItemsSource="{Binding BuyList, Mode=TwoWay}">
 						<ListView.ItemTemplate>
 							<DataTemplate>
 								<ViewCell>
