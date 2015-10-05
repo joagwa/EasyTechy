@@ -4,22 +4,49 @@
 			x:Class="EasyCheckOut.BuylistPage"
 			Title="Buy List">
 
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Name="Add List" Order="Primary"/>
+	</ContentPage.ToolbarItems>
 	<StackLayout>
-		<ScrollView>
+<!--		<ScrollView>-->
 			<StackLayout>
-				<StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center">
+<!--				<StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center">
 					<Entry Placeholder="Search Items" WidthRequest="280" />
 					<Button Text="Cancel" />
+				</StackLayout>-->
+				<SearchBar Placeholder="Search">
+				</SearchBar>
+				<StackLayout >				
+					<ListView x:Name="buylist" ItemsSource="{Binding BuyList, Mode=TwoWay}" ItemSelected="OnSelection">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+									<Grid>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="5*"/>
+											<RowDefinition Height="5*"/>
+										</Grid.RowDefinitions>
+										<Grid.ColumnDefinitions>
+										</Grid.ColumnDefinitions>
+
+										<Label Grid.Row="0"  Text="{Binding BuyListDetail}"/>
+										<Label Grid.Row="1"  Text="{Binding TimeStamp}" />
+									</Grid>
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
 				</StackLayout>
+
+<!--				<Label Text="Selected items" HorizontalOptions="Center" />
 				<StackLayout HeightRequest="200">
 					<ScrollView>
-				
 					<ListView>
 						<ListView.ItemTemplate>
 							<DataTemplate>
 								<ViewCell>
 
-<!--								my code goes here.....-->
+								my code goes here.....
 
 
 
@@ -28,29 +55,10 @@
 						</ListView.ItemTemplate>
 					</ListView>
 					</ScrollView>
-				</StackLayout>
-
-				<Label Text="Select items" HorizontalOptions="Center" />
-				<StackLayout HeightRequest="200">
-					<ScrollView>
-					<ListView>
-						<ListView.ItemTemplate>
-							<DataTemplate>
-								<ViewCell>
-
-<!--								my code goes here.....-->
-
-
-
-								</ViewCell>
-							</DataTemplate>
-						</ListView.ItemTemplate>
-					</ListView>
-					</ScrollView>
-				</StackLayout>
+				</StackLayout>-->
 
 			</StackLayout>
-		</ScrollView>
+<!--		</ScrollView>-->
 	</StackLayout>
 
 

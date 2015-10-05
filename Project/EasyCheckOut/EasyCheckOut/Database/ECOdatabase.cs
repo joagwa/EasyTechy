@@ -34,6 +34,21 @@ namespace EasyCheckOut
 
 			}
 
+			if (database.TableMappings.All(t => t.MappedType.Name != typeof(BuyList).Name)) {
+				//Create user table
+				database.CreateTable<BuyList> ();
+				database.Commit ();
+
+				BuyList item1 = new BuyList(DateTime.Now, "test1");
+				BuyList item2 = new BuyList(DateTime.Now, "test2");
+				BuyList item3 = new BuyList(DateTime.Now, "test3");
+
+//				InsertItemToBuyList (item1);
+//				InsertItemToBuyList (item2);
+//				InsertItemToBuyList (item3);
+
+			}
+
 
 		}
 
@@ -59,6 +74,16 @@ namespace EasyCheckOut
 
 		public int InsertItemToUser(User user){
 			return database.Insert (user);
+		}
+
+		//Buy list
+		public List<BuyList> GetBuyListAll(){
+			var items = database.Table<BuyList> ().ToList<BuyList> ();
+			return items;
+		}
+
+		public int InsertItemToBuyList(BuyList item){
+			return database.Insert (item);
 		}
 			
 	}
