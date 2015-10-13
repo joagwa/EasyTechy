@@ -39,6 +39,7 @@
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>
+				<Button Text="Check" />
 			</StackLayout>
 		</ScrollView>
 	</StackLayout>

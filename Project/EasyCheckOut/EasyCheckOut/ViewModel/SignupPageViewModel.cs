@@ -84,6 +84,7 @@ namespace EasyCheckOut.ViewModel
 					this.navigationService.NavigateToModal(ViewModelLocator.HomePageKey);
 				}
 			});
+			Azure.MobileService.GetTable<User> ();
 		}
 
 		public bool SignupValidate (){

@@ -15,7 +15,6 @@ namespace EasyCheckOut
 		public ECOdatabase ()
 		{
 			database = DependencyService.Get<ISqlite> ().GetConnection ();
-
 //			database.DeleteAll<CartItem> ();
 			//Create a CartItem table if there is no such table
 			if (database.TableMappings.All(t => t.MappedType.Name != typeof(CartItem).Name)) {

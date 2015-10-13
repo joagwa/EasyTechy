@@ -54,21 +54,27 @@ namespace EasyCheckOut.ViewModel
 				this.navigationService.NavigateTo(ViewModelLocator.SignupPageKey);
 			});
 
-			Login = new Command (() => {
-				var database = new ECOdatabase();
-				int rowcount = database.ValidateUser(Username, Password);
-				if (rowcount == 0){
-					App.LoggedIn = false;
-				}else{
-					App.LoggedIn = true;
+			Login = new Command ( async () => {
+//				var database = new ECOdatabase();
+				var database1 = new AzureDatabase ();
 
-					//Navigate to homepage without back key
-					this.navigationService.NavigateToModal(ViewModelLocator.HomePageKey);
+//				database1.GetUsers();
+
+				int rowcount = await database1.ValidateUser (Username, Password);
+				if (rowcount == 0) {
+					App.LoggedIn = false;
 				}
+				else {
+					App.LoggedIn = true;
+					//Navigate to homepage without back key
+					this.navigationService.NavigateToModal (ViewModelLocator.HomePageKey);
+				}
+
 			});
 
 		}
 
+			
 
 		public void OnAppearing()
 		{

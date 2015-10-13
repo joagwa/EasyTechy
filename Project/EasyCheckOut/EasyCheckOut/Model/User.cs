@@ -6,8 +6,9 @@ namespace EasyCheckOut
 	public class User
 	{
 		[PrimaryKey, AutoIncrement]
-		public int UserID{ get; set; }
+		public int id{ get; set; }
 
+		public int UserId { get; set; }
 		[NotNull, MaxLength (128)]
 		public string UserName{ get; set; }
 

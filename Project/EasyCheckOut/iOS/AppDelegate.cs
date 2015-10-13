@@ -5,6 +5,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using Microsoft.WindowsAzure.MobileServices;
+
 namespace EasyCheckOut.iOS
 {
 	[Register ("AppDelegate")]
@@ -23,6 +25,10 @@ namespace EasyCheckOut.iOS
 
 			return base.FinishedLaunching (app, options);
 		}
+
+
+
+
 	}
 }
 
