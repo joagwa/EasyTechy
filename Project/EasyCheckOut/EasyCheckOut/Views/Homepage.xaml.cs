@@ -28,6 +28,8 @@ namespace EasyCheckOut
 //				Navigation.PushAsync (new LoginPage ());
 //			};
 
+			var bkcolor = new Color (0, 0, 0, 0.5);
+
 			Logout = new ToolbarItem ("Logout", null, async() => 
 			{
 				ToolbarItems.Remove(Logout);

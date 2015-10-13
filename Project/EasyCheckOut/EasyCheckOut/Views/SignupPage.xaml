@@ -2,7 +2,9 @@
 <BaseView xmlns="http://xamarin.com/schemas/2014/forms" 
 			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			x:Class="EasyCheckOut.SignupPage"
-			Title="Create an account">
+			Title="Create an account"
+			BackgroundImage="IAB330_Background.png" 
+			BackgroundColor="Transparent">
 	<StackLayout>
 	<ScrollView VerticalOptions="FillAndExpand">
 	<StackLayout Padding="30" Spacing="10">
