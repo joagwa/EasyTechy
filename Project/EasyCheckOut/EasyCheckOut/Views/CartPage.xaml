@@ -2,7 +2,13 @@
 <BaseView xmlns="http://xamarin.com/schemas/2014/forms" 
 			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			x:Class="EasyCheckOut.CartPage"
-			Title="Cart">
+			Title="Cart"
+			BackgroundImage="IAB330_Background.png" 
+			BackgroundColor="Transparent">
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Name="Check Out" Order="Primary"/>
+	</ContentPage.ToolbarItems>
 	<StackLayout>
 		<ScrollView>
 			<StackLayout Padding="10">

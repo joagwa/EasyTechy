@@ -57,8 +57,15 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: btyegj@hotmail.com (ZXXLGVZ8VP)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignResourceRules>Info.plist</CodesignResourceRules>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <CodesignProvision>865c8161-48b7-4b45-8e44-b38779fabbde</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -121,21 +128,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-    <BundleResource Include="Resources\Icon-60%402x.png" />
-    <BundleResource Include="Resources\Icon-60%403x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
-    <BundleResource Include="Resources\Icon-Small%403x.png" />
-    <BundleResource Include="Resources\Icon-Small-40.png" />
-    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40%403x.png" />
     <BundleResource Include="Resources\connect.png" />
     <BundleResource Include="Resources\cart.png" />
     <BundleResource Include="Resources\cart 1.png" />
@@ -144,6 +136,33 @@
     <BundleResource Include="Resources\scanner.png" />
     <BundleResource Include="Resources\to-buy.png" />
     <BundleResource Include="Resources\e-receipt.png" />
+    <BundleResource Include="Resources\bluetooth.png" />
+    <BundleResource Include="Resources\Icon-40.png" />
+    <BundleResource Include="Resources\Icon-40%402x.png" />
+    <BundleResource Include="Resources\Icon-40%403x.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon-60%403x.png" />
+    <BundleResource Include="Resources\Icon-76.png" />
+    <BundleResource Include="Resources\Icon-76%402x.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\Icon-Small%403x.png" />
+    <BundleResource Include="Resources\Default~ipad~landscape~nostatusbar%402x.png" />
+    <BundleResource Include="Resources\iPhone6-Plus-landscape%403x.png" />
+    <BundleResource Include="Resources\iPhone6-Plus-portrait%403x.png" />
+    <BundleResource Include="Resources\iPhone6-portrait%402x.png" />
+    <BundleResource Include="Resources\Default~ipad~landscape~nostatusbar.png" />
+    <BundleResource Include="Resources\Default~ipad~nostatusbar%402x.png" />
+    <BundleResource Include="Resources\Default~ipad%402x.png" />
+    <BundleResource Include="Resources\Default~ipad~landscape.png" />
+    <BundleResource Include="Resources\Default~ipad~landscape%402x.png" />
+    <BundleResource Include="Resources\Default~ipad~nostatusbar.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\Default~ipad.png" />
+    <BundleResource Include="Resources\Woolworths_logo.png" />
+    <BundleResource Include="Resources\IAB330_Background.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
