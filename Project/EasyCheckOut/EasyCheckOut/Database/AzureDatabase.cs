@@ -20,6 +20,11 @@ namespace EasyCheckOut
 			return await x.ToListAsync ();
 		}
 
+		public async void InsertUser(string username, string password, string mobile, string email){
+			await Azure.MobileService.GetTable<User> ().InsertAsync (new User (username, password, mobile, email));
+//			return rowaffected;
+		}
+
 		public async Task<int> ValidateUser(string username, string password){
 			var rowcount = await Azure.MobileService.GetTable<User>().Where(x => x.UserName == username && x.UserPassword == password).ToListAsync();
 			return rowcount.Count;

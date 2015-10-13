@@ -76,10 +76,14 @@ namespace EasyCheckOut.ViewModel
 			CreateAccount = new Command (() => {
 				if(SignupValidate()){
 					// create account
-					User newUser = new User(Username, Password, Mobile, Email);
+//					User newUser = new User(Username, Password, Mobile, Email);
 
-					var database = new ECOdatabase();
-					database.InsertItemToUser(newUser);
+//					var database = new ECOdatabase();
+//					database.InsertItemToUser(newUser);
+
+					var database = new AzureDatabase();
+
+					database.InsertUser(Username, Password, Mobile, Email);
 
 					this.navigationService.NavigateToModal(ViewModelLocator.HomePageKey);
 				}

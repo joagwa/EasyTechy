@@ -56,11 +56,11 @@ namespace EasyCheckOut.ViewModel
 
 			Login = new Command ( async () => {
 //				var database = new ECOdatabase();
-				var database1 = new AzureDatabase ();
+				var database = new AzureDatabase ();
 
 //				database1.GetUsers();
 
-				int rowcount = await database1.ValidateUser (Username, Password);
+				int rowcount = await database.ValidateUser (Username, Password);
 				if (rowcount == 0) {
 					App.LoggedIn = false;
 				}
