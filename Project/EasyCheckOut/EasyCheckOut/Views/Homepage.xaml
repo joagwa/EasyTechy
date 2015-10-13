@@ -38,7 +38,7 @@
 				<ColumnDefinition Width="3*" />
 			</Grid.ColumnDefinitions>
 
-			<StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="{0, 0, 0}">
+			<StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#D7D4D4" Opacity="0.7">
 				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
 					<Image Source="cart 1.png" HeightRequest="50" WidthRequest="50"/>
 					<Label Text="Cart" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
