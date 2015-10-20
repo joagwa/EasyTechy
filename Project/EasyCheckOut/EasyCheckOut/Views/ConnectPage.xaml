@@ -20,7 +20,7 @@
 		</Grid.RowDefinitions>
 
 		<StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand" >
-			<Image Source="cart 1.png"  HeightRequest="200"/>
+			<Image Source="cart.png"  HeightRequest="200"/>
 		</StackLayout>
 
 

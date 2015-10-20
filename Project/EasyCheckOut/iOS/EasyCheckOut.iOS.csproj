@@ -128,10 +128,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\connect.png" />
-    <BundleResource Include="Resources\cart.png" />
-    <BundleResource Include="Resources\cart 1.png" />
-    <BundleResource Include="Resources\connect 1.png" />
     <BundleResource Include="Resources\map.png" />
     <BundleResource Include="Resources\scanner.png" />
     <BundleResource Include="Resources\to-buy.png" />
@@ -155,6 +151,9 @@
     <BundleResource Include="Resources\Default~ipad.png" />
     <BundleResource Include="Resources\Woolworths_logo.png" />
     <BundleResource Include="Resources\IAB330_Background.png" />
+    <BundleResource Include="Resources\cart.png" />
+    <BundleResource Include="Resources\connect.png" />
+    <BundleResource Include="Resources\IAB330 Logo 5.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
