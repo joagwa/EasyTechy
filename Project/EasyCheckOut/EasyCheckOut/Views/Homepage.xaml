@@ -20,7 +20,7 @@
 		</Grid.RowDefinitions>
 
 		<StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand">
-			<Image Source="Woolworths_logo.png"  HeightRequest="150"/>
+			<Image Source="Woolworths_logo.png"  HeightRequest="200"/>
 		</StackLayout>
 
 <!--		<StackLayout Grid.Row="0" >
@@ -38,9 +38,9 @@
 				<ColumnDefinition Width="3*" />
 			</Grid.ColumnDefinitions>
 
-			<StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#D7D4D4" Opacity="0.7">
+			<StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#D7D4D4" Opacity="0.8">
 				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
-					<Image Source="cart 1.png" HeightRequest="50" WidthRequest="50"/>
+					<Image Source="cart.png" HeightRequest="50" WidthRequest="50"/>
 					<Label Text="Cart" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
 				</StackLayout>
 				<StackLayout.GestureRecognizers>
@@ -48,9 +48,9 @@
 				</StackLayout.GestureRecognizers>
 			</StackLayout>
 
-			<StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="#D7D4D4" Opacity="0.7">
+			<StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="#D7D4D4" Opacity="0.8">
 				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
-					<Image Source="connect 1.png" HeightRequest="50" WidthRequest="50" />
+					<Image Source="connect.png" HeightRequest="50" WidthRequest="50" />
 					<Label Text="Connect" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
 				</StackLayout>
 					<StackLayout.GestureRecognizers>
@@ -58,7 +58,7 @@
 					</StackLayout.GestureRecognizers>
 			</StackLayout>
 
-			<StackLayout Grid.Row="0" Grid.Column="2" BackgroundColor="#D7D4D4" Opacity="0.5" >
+			<StackLayout Grid.Row="0" Grid.Column="2" BackgroundColor="#D7D4D4" Opacity="0.8" >
 				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
 					<Image Source="scanner.png" HeightRequest="50" WidthRequest="50" />
 					<Label Text="Scanner" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
@@ -68,7 +68,7 @@
 					</StackLayout.GestureRecognizers>
 			</StackLayout>
 
-			<StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="#D7D4D4" Opacity="0.7">
+			<StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="#D7D4D4" Opacity="0.8">
 				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
 					<Image Source="map.png" HeightRequest="50" WidthRequest="50" />
 					<Label Text="Map" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
@@ -77,7 +77,7 @@
 						<TapGestureRecognizer Command="{Binding GoToMapPage}"/>
 					</StackLayout.GestureRecognizers>
 			</StackLayout>
-			<StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="#D7D4D4" Opacity="0.7">
+			<StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="#D7D4D4" Opacity="0.8">
 				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
 					<Image Source="to-buy.png" HeightRequest="50" WidthRequest="50" />
 					<Label Text="To-buy" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
@@ -86,7 +86,7 @@
 						<TapGestureRecognizer Command="{Binding GoToBuylistPage}"/>
 					</StackLayout.GestureRecognizers>
 			</StackLayout>
-			<StackLayout Grid.Row="1" Grid.Column="2" BackgroundColor="#D7D4D4">
+			<StackLayout Grid.Row="1" Grid.Column="2" BackgroundColor="#D7D4D4" Opacity="0.8">
 				<StackLayout Spacing="8" VerticalOptions="CenterAndExpand">
 					<Image Source="e-receipt.png" HeightRequest="50" WidthRequest="50" />
 					<Label Text="e-Receipt" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" />
