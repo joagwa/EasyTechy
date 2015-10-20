@@ -47,7 +47,7 @@ namespace EasyCheckOut
 
 
 			if (App.LoggedIn) {
-//				ToolbarItems.Remove (LoginToolBar);
+				ToolbarItems.Remove (LoginToolBar);
 //				ToolbarItems.Add (Logout);
 			}
 
