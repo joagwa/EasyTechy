@@ -12,7 +12,7 @@
 	<StackLayout>
 		<ScrollView>
 			<StackLayout Padding="10">
-				<ListView ItemsSource="{Binding ItemList, Mode=TwoWay}" >
+				<ListView ItemsSource="{Binding ItemList, Mode=TwoWay}" BackgroundColor="Transparent" >
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell>

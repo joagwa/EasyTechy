@@ -63,8 +63,7 @@ namespace EasyCheckOut.ViewModel
 				int rowcount = await database.ValidateUser (Username, Password);
 				if (rowcount == 0) {
 					App.LoggedIn = false;
-				}
-				else {
+				} else {
 					App.LoggedIn = true;
 					//Navigate to homepage without back key
 					this.navigationService.NavigateToModal (ViewModelLocator.HomePageKey);

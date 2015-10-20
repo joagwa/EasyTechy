@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
+
 
 namespace EasyCheckOut
 {
@@ -26,8 +28,9 @@ namespace EasyCheckOut
 		}
 
 		public async Task<int> ValidateUser(string username, string password){
-			var rowcount = await Azure.MobileService.GetTable<User>().Where(x => x.UserName == username && x.UserPassword == password).ToListAsync();
-			return rowcount.Count;
+			var rowcount = await Azure.MobileService.GetTable<User> ().ToListAsync ();
+			var y = rowcount.Where(x => x.UserName == username && x.UserPassword == password);
+			return y.Count();
 		}
 	}
 }
