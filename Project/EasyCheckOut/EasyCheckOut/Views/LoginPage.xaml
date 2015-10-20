@@ -2,11 +2,13 @@
 <BaseView xmlns="http://xamarin.com/schemas/2014/forms" 
 				xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 				x:Class="EasyCheckOut.LoginPage"
-				Title="Login">
-	<StackLayout Padding="30" Spacing="20">
+				Title="Login"
+				BackgroundImage="IAB330_Background.png" 
+			    BackgroundColor="Transparent">
+	<StackLayout Padding="30" Spacing="30">
 
 		<StackLayout>
-			<Label Text="EasyTechy" FontSize="26" HorizontalOptions="Center" HeightRequest="50" />
+			<Image Source="IAB330 Logo 5.png"  HeightRequest="35"/>
 			<Label Text="Login successfully" TextColor="Red" IsVisible="{Binding LoggedIn}" />
 
 		</StackLayout>

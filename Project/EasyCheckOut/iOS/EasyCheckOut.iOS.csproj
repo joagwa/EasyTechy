@@ -153,6 +153,7 @@
     <BundleResource Include="Resources\IAB330_Background.png" />
     <BundleResource Include="Resources\cart.png" />
     <BundleResource Include="Resources\connect.png" />
+    <BundleResource Include="Resources\IAB330 Logo 5.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
