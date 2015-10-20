@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
+using ZXing.Mobile;
 
 namespace EasyCheckOut.ViewModel
 {
@@ -10,6 +11,7 @@ namespace EasyCheckOut.ViewModel
 		private IMyNavigationService navigationService;
 
 		public ICommand ScanItemToCart{ get; private set; }
+		public ICommand OpenScanner{ get; private set; }
 
 		public ScannerPageViewModel (IMyNavigationService navigationService)
 		{
@@ -22,6 +24,7 @@ namespace EasyCheckOut.ViewModel
 				database.InsertItemToCart(item1);
 
 			});
+				
 		}
 			
 

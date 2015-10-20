@@ -26,21 +26,21 @@ namespace EasyCheckOut
 
 			}
 
-			if (database.TableMappings.All(t => t.MappedType.Name != typeof(User).Name)) {
-				//Create user table
-				database.CreateTable<User> ();
-				database.Commit ();
-
-			}
+//			if (database.TableMappings.All(t => t.MappedType.Name != typeof(User).Name)) {
+//				//Create user table
+//				database.CreateTable<User> ();
+//				database.Commit ();
+//
+//			}
 
 			if (database.TableMappings.All(t => t.MappedType.Name != typeof(BuyList).Name)) {
 				//Create user table
 				database.CreateTable<BuyList> ();
 				database.Commit ();
 
-				BuyList item1 = new BuyList(DateTime.Now, "test1");
-				BuyList item2 = new BuyList(DateTime.Now, "test2");
-				BuyList item3 = new BuyList(DateTime.Now, "test3");
+//				BuyList item1 = new BuyList(DateTime.Now, "test1");
+//				BuyList item2 = new BuyList(DateTime.Now, "test2");
+//				BuyList item3 = new BuyList(DateTime.Now, "test3");
 
 //				InsertItemToBuyList (item1);
 //				InsertItemToBuyList (item2);
