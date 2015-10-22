@@ -21,7 +21,7 @@
 
 		<StackLayout>
 			<Label Text="Password :" />
-			<Entry Text="{Binding Password}" HeightRequest="40"/>
+			<Entry Text="{Binding Password}" HeightRequest="40" IsPassword="true"/>
 		</StackLayout>
 
 		<StackLayout Spacing="0" Padding="0,30,0,0">

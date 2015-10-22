@@ -7,8 +7,10 @@ namespace EasyCheckOut
 	{	
 		[PrimaryKey, AutoIncrement]
 		public int itemID { get; set; }
+
 		[NotNull, MaxLength(128)]
 		public string itemName { get; set; }
+
 		public double itemPrice { get; set; }
 
 		public CartItem(){

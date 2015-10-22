@@ -30,6 +30,7 @@ namespace EasyCheckOut.ViewModel
 		public ICommand GoToReceivePage { get; private set; }
 		public ICommand GoToMapPage { get; private set; }
 		public ICommand GoToScannerPage { get; private set; }
+		public ICommand LogOutFunction { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -45,6 +46,11 @@ namespace EasyCheckOut.ViewModel
             ////{
             ////    // Code runs "for real"
             ////}
+
+			LogOutFunction = new Command (() => {
+				App.LoggedIn = false;
+				this.navigationService.NavigateToModal(ViewModelLocator.HomePageKey);
+			});
 
 			GoToLoginPage = new Command (param => {
 				var x = param as String;

@@ -7,6 +7,7 @@
 			 BackgroundColor="Transparent">
 	<ContentPage.ToolbarItems>
 		<ToolbarItem x:Name="LoginToolBar" Name="Login" Order="Primary" Command="{Binding GoToLoginPage}" />
+		<ToolbarItem x:Name="LogOutToolBar" Name="Logout" Order="Primary" Command="{Binding LogOutFunction}" />
 	</ContentPage.ToolbarItems>
 	<StackLayout>
 <!--		<Image Source="Default.png"/>-->

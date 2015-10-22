@@ -10,6 +10,7 @@ namespace EasyCheckOut
 	public partial class Homepage : BaseView
 	{
 		ToolbarItem Logout;
+		ToolbarItem Login;
 
 		public Homepage ()
 		{
@@ -28,15 +29,16 @@ namespace EasyCheckOut
 //				Navigation.PushAsync (new LoginPage ());
 //			};
 
-			var bkcolor = new Color (0, 0, 0, 0.5);
+//			Logout = new ToolbarItem ("Logout", null, async() => 
+//			{
+//				ToolbarItems.Remove(Logout);
+//					await Navigation.PushAsync(new Homepage());
+//			});
 
-			Logout = new ToolbarItem ("Logout", null, async() => 
-			{
-				ToolbarItems.Remove(Logout);
-					await Navigation.PushAsync(new Homepage());
-			}
-			
-			);
+//			<ToolbarItem x:Name="LoginToolBar" Name="Login" Order="Primary" Command="{Binding GoToLoginPage}" />
+
+
+
 		}
 
 		protected override void OnAppearing()
@@ -44,14 +46,21 @@ namespace EasyCheckOut
 			var vm = ServiceLocator.Current.GetInstance<HomePageViewModel> ();
 			base.OnAppearing ();
 			vm.OnAppearing ();
+			ToolbarItems.Remove (LoginToolBar);
+			ToolbarItems.Remove (LogOutToolBar);
 
+//			if (App.LoginToolBarIsShow == false) {
+				
+				if (App.LoggedIn) {
+					ToolbarItems.Remove (LoginToolBar);
+					ToolbarItems.Add (LogOutToolBar);
+				} else {
+					ToolbarItems.Add (LoginToolBar);
+					ToolbarItems.Remove (LogOutToolBar);
+				}
 
-			if (App.LoggedIn) {
-				ToolbarItems.Remove (LoginToolBar);
-//				ToolbarItems.Add (Logout);
-			}
+//			}
 
-//			Navigation.
 		}
 
 //		void OnTapGestureRecognizerTapped(object sender, EventArgs args) {

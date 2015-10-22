@@ -57,7 +57,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignKey>iPhone Developer: btyegj@hotmail.com (ZXXLGVZ8VP)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignResourceRules>Info.plist</CodesignResourceRules>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
@@ -65,7 +65,7 @@
     </IpaPackageName>
     <MtouchI18n>
     </MtouchI18n>
-    <CodesignProvision>865c8161-48b7-4b45-8e44-b38779fabbde</CodesignProvision>
+    <MtouchSdkVersion>9.0</MtouchSdkVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
