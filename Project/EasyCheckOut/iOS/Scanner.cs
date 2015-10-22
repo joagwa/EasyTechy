@@ -21,8 +21,8 @@ namespace Scanner.iOS
 			//if (result != null)
 			//Console.WriteLine("Scanned Barcode: " + result.Text);
 
-//			return result.Text;
-			return "We need to link to a real iphone to test";
+			return result.Text;
+//			return "We need to link to a real iphone to test";
 		}
 
 		#endregion

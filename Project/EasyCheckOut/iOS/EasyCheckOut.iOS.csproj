@@ -59,13 +59,20 @@
     <MtouchProfiling>true</MtouchProfiling>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignResourceRules>Info.plist</CodesignResourceRules>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <IpaPackageName>
     </IpaPackageName>
     <MtouchI18n>
     </MtouchI18n>
     <MtouchSdkVersion>9.0</MtouchSdkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'test|iPhone' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\test</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
