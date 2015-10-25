@@ -6,7 +6,8 @@
 
 
 	<StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-		<Button x:Name="btnScan" Text="Scan" Clicked="onScanClicked" HorizontalOptions="Center"   />	
+		<Button x:Name="btnScan" Text="Scan" Clicked="onScanClicked" HorizontalOptions="Center"   />
+		<Button Text="Simple scane" Command="{Binding ScanItemToCart}"	/>
 	</StackLayout>
 	
 </BaseView>

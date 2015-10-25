@@ -17,14 +17,14 @@ namespace EasyCheckOut
 			database = DependencyService.Get<ISqlite> ().GetConnection ();
 //			database.DeleteAll<CartItem> ();
 			//Create a CartItem table if there is no such table
-			if (database.TableMappings.All(t => t.MappedType.Name != typeof(CartItem).Name)) {
-//			if (!TableExist("CartItem")){
-
-				//Create cartitem table
-				database.CreateTable<CartItem> ();
-				database.Commit ();
-
-			}
+//			if (database.TableMappings.All(t => t.MappedType.Name != typeof(CartItem).Name)) {
+////			if (!TableExist("CartItem")){
+//
+//				//Create cartitem table
+//				database.CreateTable<CartItem> ();
+//				database.Commit ();
+//
+//			}
 
 //			if (database.TableMappings.All(t => t.MappedType.Name != typeof(User).Name)) {
 //				//Create user table
@@ -48,6 +48,10 @@ namespace EasyCheckOut
 
 			}
 
+			if (GetCartItemAll () == null) {
+				database.CreateTable<CartItem> ();
+				database.Commit ();
+			}
 
 		}
 
@@ -66,14 +70,14 @@ namespace EasyCheckOut
 		}
 
 		//Function for user table
-		public int ValidateUser(string username, string password){
-			var rowcount = database.Query<User> ("Select * from User where UserName = ? and UserPassword = ?", username, password);
-			return rowcount.Count ();
-		}
-
-		public int InsertItemToUser(User user){
-			return database.Insert (user);
-		}
+//		public int ValidateUser(string username, string password){
+//			var rowcount = database.Query<User> ("Select * from User where UserName = ? and UserPassword = ?", username, password);
+//			return rowcount.Count ();
+//		}
+//
+//		public int InsertItemToUser(User user){
+//			return database.Insert (user);
+//		}
 
 		//Buy list
 		public List<BuyList> GetBuyListAll(){

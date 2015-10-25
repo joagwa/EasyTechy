@@ -5,7 +5,7 @@
 			Title="Buy List">
 
 	<ContentPage.ToolbarItems>
-		<ToolbarItem Name="Add List" Order="Primary"/>
+		<ToolbarItem Name="Add List" Order="Primary" Command="{Binding AddListToList}" />
 	</ContentPage.ToolbarItems>
 	<StackLayout>
 <!--		<ScrollView>-->
@@ -29,7 +29,7 @@
 										<Grid.ColumnDefinitions>
 										</Grid.ColumnDefinitions>
 
-										<Label Grid.Row="0"  Text="{Binding BuyListDetail}"/>
+										<Label Grid.Row="0"  Text="{Binding BuyListName}"/>
 										<Label Grid.Row="1"  Text="{Binding TimeStamp}" />
 									</Grid>
 								</ViewCell>

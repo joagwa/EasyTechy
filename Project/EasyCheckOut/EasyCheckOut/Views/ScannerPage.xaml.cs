@@ -22,7 +22,9 @@ namespace EasyCheckOut
 		}
 
 		protected override void OnAppearing(){
-		
+//			var data = await DependencyService.Get<IScanner> ().Scan ();
+//
+//			DisplayAlert ("Scanner", data, "cancel");
 		}
 
 

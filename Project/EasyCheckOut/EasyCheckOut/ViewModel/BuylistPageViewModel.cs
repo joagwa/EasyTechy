@@ -12,6 +12,8 @@ namespace EasyCheckOut.ViewModel
 
 		private ObservableCollection<BuyList> buyList;
 
+		public ICommand AddListToList{ get; private set; }
+
 		public ObservableCollection<BuyList> BuyList {
 			get { return buyList; }
 			set { 
@@ -19,13 +21,31 @@ namespace EasyCheckOut.ViewModel
 				RaisePropertyChanged (() => BuyList);
 			}
 		}
-
-
+			
 		private IMyNavigationService navigationService;
 
 		public BuylistPageViewModel (IMyNavigationService navigationService)
 		{
 			this.navigationService = navigationService;
+
+//			AddList = new Command (() => {
+//				var database = new ECOdatabase();
+//
+//				BuyList list = new BuyList("11", "Sample");
+//				database.InsertItemToBuyList(list);
+//			
+//			});
+
+			AddListToList = new Command (() => {
+				var database = new ECOdatabase();
+
+				BuyList list = new BuyList (DateTime.Now, "Sample List");
+				database.InsertItemToBuyList(list);
+
+				BuyList = new ObservableCollection<BuyList> (database.GetBuyListAll ());
+			});
+
+
 		}
 
 		public void OnApperaing ()
@@ -33,22 +53,6 @@ namespace EasyCheckOut.ViewModel
 			var database = new ECOdatabase ();
 			BuyList = new ObservableCollection<BuyList> (database.GetBuyListAll ());
 		}
-
-		//		async void ItemSelected(object sender, SelectedItemChangedEventArgs e)
-		//		{
-		//			ListView BuyList = (ListView)sender;
-		//			if (BuyList.SelectedItem == null)
-		//			{
-		//				return;
-		//			}
-				
-		//			await this.navigationService.NavigateTo (ViewModelLocator.HomePageKey);
-		//			this.navigationService.NavigateTo (ViewModelLocator.HomePageKey);
-
-		//			await Navigation.PushAsync(new EmployeeDetailPage((Employee)e.SelectedItem));
-		//			listView.SelectedItem = null;
-		//		}
-
 
 			
 	}
