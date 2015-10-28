@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<BaseView xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="EasyCheckOut.ConnectPage"
+			Title="Connect"
+			BackgroundImage="IAB330_Background.png" 
+			BackgroundColor="Transparent">
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Name="Scanner" Order="Primary"/>
+	</ContentPage.ToolbarItems>
+	
+	<Grid VerticalOptions="FillAndExpand" 
+		  HorizontalOptions="FillAndExpand" 
+		  RowSpacing="0" 
+		  ColumnSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="6*" />
+			<RowDefinition Height="4*" />
+		</Grid.RowDefinitions>
+
+		<StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand" >
+			<Image Source="cart.png"  HeightRequest="200"/>
+		</StackLayout>
+
+
+
+		<StackLayout Grid.Row="1" Spacing="20">
+			<Image Source="bluetooth.png"  HeightRequest="50" HorizontalOptions="Center"  />
+			<Label Text="Please tab or scan your e-trolley" FontSize="18" HorizontalOptions="Center" HeightRequest="20" />
+		</StackLayout>
+			
+		
+	</Grid>
+</BaseView>

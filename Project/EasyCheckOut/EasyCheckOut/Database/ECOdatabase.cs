@@ -16,26 +16,26 @@ namespace EasyCheckOut
 		{
 			database = DependencyService.Get<ISqlite> ().GetConnection ();
 //			database.DeleteAll<CartItem> ();
+
 			//Create a CartItem table if there is no such table
-			if (database.TableMappings.All(t => t.MappedType.Name != typeof(CartItem).Name)) {
-				//Create cartitem table
+			if (database.TableMappings.All (t => t.MappedType.Name != typeof(CartItem).Name)) {
 				database.CreateTable<CartItem> ();
 				database.Commit ();
 			}
 
-			if (database.TableMappings.All(t => t.MappedType.Name != typeof(BuyList).Name)) {
-				//Create cartitem table
+			if (database.TableMappings.All (t => t.MappedType.Name != typeof(BuyList).Name)) {
+				//Create user table
 				database.CreateTable<BuyList> ();
 				database.Commit ();
 			}
 
-			if (database.TableMappings.All(t => t.MappedType.Name != typeof(WoolworthsItem).Name)) {
+			if (database.TableMappings.All (t => t.MappedType.Name != typeof(WoolworthsItem).Name)) {
 				//Create cartitem table
 				database.CreateTable<WoolworthsItem> ();
 				database.Commit ();
 			}
 
-//			database.DeleteAll<BuyList>();
+			//			database.DeleteAll<BuyList>();
 
 			if (GetWoolWorthsItemAll ().Count == 0) {
 				WoolworthsItem item1 = new WoolworthsItem ("50375264", "Kleenex Tissues", 2.50);
@@ -45,71 +45,78 @@ namespace EasyCheckOut
 		}
 
 		//Function for cart item table
-		public List<CartItem> GetCartItemAll(){
+		public List<CartItem> GetCartItemAll ()
+		{
 			var items = database.Table<CartItem> ().ToList<CartItem> ();
 			return items;
 		}
-			
-		public int InsertItemToCart(CartItem item){
+
+		public int InsertItemToCart (CartItem item)
+		{
 			return database.Insert (item);
 		}
 
-		public int DeleteItemInCart(CartItem item){
-			return database.Delete<CartItem>(item.itemID);
+		public int DeleteItemInCart (CartItem item)
+		{
+			return database.Delete<CartItem> (item.itemID);
 		}
 
-		public int DeleteAllInCart(){
+		public int DeleteAllInCart ()
+		{
 			return database.DeleteAll<CartItem> ();
 		}
 
 		//Function for user table
-//		public int ValidateUser(string username, string password){
-//			var rowcount = database.Query<User> ("Select * from User where UserName = ? and UserPassword = ?", username, password);
-//			return rowcount.Count ();
-//		}
-//
-//		public int InsertItemToUser(User user){
-//			return database.Insert (user);
-//		}
+		//		public int ValidateUser(string username, string password){
+		//			var rowcount = database.Query<User> ("Select * from User where UserName = ? and UserPassword = ?", username, password);
+		//			return rowcount.Count ();
+		//		}
+		//
+		//		public int InsertItemToUser(User user){
+		//			return database.Insert (user);
+		//		}
 
 		//Buy list
-		public List<BuyList> GetBuyListAll(){
+		public List<BuyList> GetBuyListAll ()
+		{
 			var items = database.Table<BuyList> ().ToList<BuyList> ();
 			return items;
 		}
 
-		public int InsertItemToBuyList(BuyList item){
+		public int InsertItemToBuyList (BuyList item)
+		{
 			return database.Insert (item);
 		}
 
-		public int DeleteAllInBuyList(){
+		public int DeleteAllInBuyList ()
+		{
 			return database.DeleteAll<BuyList> ();
 		}
 
 		//Woolworths items
-		public List<WoolworthsItem> GetWoolWorthsItemAll(){
+		public List<WoolworthsItem> GetWoolWorthsItemAll ()
+		{
 			var items = database.Table<WoolworthsItem> ().ToList<WoolworthsItem> ();
 			return items;
 		}
 
-		public int InsertItemToWoolWorthsItem(WoolworthsItem item){
+		public int InsertItemToWoolWorthsItem (WoolworthsItem item)
+		{
 			return database.Insert (item);
 
 		}
 
-		public List<WoolworthsItem> SearchWoolWorthsItem(string searchTerm){
-//			return database.Table<WoolworthsItem> ().Where (x => x.itemBarCode.Contains (searchTerm)).ToList ();
+		public List<WoolworthsItem> SearchWoolWorthsItem (string searchTerm)
+		{
+			//return database.Table<WoolworthsItem> ().Where (x => x.itemBarCode.Contains (searchTerm)).ToList ();
 
 			var valueList = 
 				from item in database.Table<WoolworthsItem> ()
-			    where item.itemBarCode.Contains (searchTerm)
-                select item;
+				    where item.itemBarCode.Contains (searchTerm)
+				    select item;
 			var value = valueList.ToList ();
 			return value;
 		}
-			
-
-
 			
 	}
 }

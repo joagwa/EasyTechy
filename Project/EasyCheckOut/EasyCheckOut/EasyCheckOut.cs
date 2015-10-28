@@ -23,22 +23,22 @@ namespace EasyCheckOut
 
 		public App ()
 		{
-			Initialize ();
+			Initialize();
+
 
 			// The root page of your application
 			MainPage = GetHomePage();
 		}
 
 		private void Initialize(){
-			
 			LoggedIn = false;
 			LoginToolBarIsShow = false;
 
 
 			//reset
-//			var database = new ECOdatabase ();
-//			database.DeleteAllInBuyList ();
-//			database.DeleteAllInCart ();
+			var database = new ECOdatabase ();
+			database.DeleteAllInBuyList ();
+			database.DeleteAllInCart ();
 		}
 
 		public Page GetHomePage ()

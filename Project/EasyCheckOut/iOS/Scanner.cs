@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using Scanner.iOS;
 using EasyCheckOut;
 
-[assembly: Xamarin.Forms.Dependency (typeof (Scanner.iOS.Scanner))]
+[assembly: Xamarin.Forms.Dependency (typeof(Scanner.iOS.Scanner))]
 
 namespace Scanner.iOS
 {
@@ -15,8 +15,8 @@ namespace Scanner.iOS
 		async public Task<string> Scan ()
 		{
 			//NOTE: On Android you MUST pass a Context into the Constructor!
-			var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-			var result = await scanner.Scan();
+			var scanner = new ZXing.Mobile.MobileBarcodeScanner ();
+			var result = await scanner.Scan ();
 
 			if (result != null) {
 				Console.WriteLine ("Scanned Barcode: " + result.Text);
@@ -25,10 +25,8 @@ namespace Scanner.iOS
 			} else {
 				Console.WriteLine ("No barcode scanned");
 				return "50375264";
+//				return null;
 			}
-				
-//			return result.Text;
-//			return "We need to link to a real iphone to test";
 		}
 
 		#endregion

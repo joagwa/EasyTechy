@@ -6,51 +6,58 @@ using System.Collections.Generic;
 
 namespace EasyCheckOut.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
-    /// </para>
-    /// <para>
-    /// You can also use Blend to data bind with the tool's support.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
-    public class HomePageViewModel : ViewModelBase
-    {
+	/// <summary>
+	/// This class contains properties that the main View can data bind to.
+	/// <para>
+	/// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
+	/// </para>
+	/// <para>
+	/// You can also use Blend to data bind with the tool's support.
+	/// </para>
+	/// <para>
+	/// See http://www.galasoft.ch/mvvm
+	/// </para>
+	/// </summary>
+	public class HomePageViewModel : ViewModelBase
+	{
 		private IMyNavigationService navigationService;
 
 		public string Param { get; set; }
 
 		public ICommand GoToLoginPage { get; private set; }
+
 		public ICommand GoToBuylistPage { get; private set; }
+
 		public ICommand GoToCartPage { get; private set; }
+
 		public ICommand GoToConnectPage { get; private set; }
+
 		public ICommand GoToReceivePage { get; private set; }
+
 		public ICommand GoToMapPage { get; private set; }
+
 		public ICommand GoToScannerPage { get; private set; }
+
 		public ICommand LogOutFunction { get; private set; }
 
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
-		public HomePageViewModel(IMyNavigationService navigationService)
-        {
+		/// <summary>
+		/// Initializes a new instance of the MainViewModel class.
+		/// </summary>
+		public HomePageViewModel (IMyNavigationService navigationService)
+		{
 			this.navigationService = navigationService;
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+			////if (IsInDesignMode)
+			////{
+			////    // Code runs in Blend --> create design time data.
+			////}
+			////else
+			////{
+			////    // Code runs "for real"
+			////}
 
 			LogOutFunction = new Command (() => {
 				App.LoggedIn = false;
-				this.navigationService.NavigateToModal(ViewModelLocator.HomePageKey);
+				this.navigationService.NavigateToModal (ViewModelLocator.HomePageKey);
 			});
 
 			GoToLoginPage = new Command (param => {
@@ -67,32 +74,34 @@ namespace EasyCheckOut.ViewModel
 			});
 
 			GoToConnectPage = new Command (() => {
-				this.navigationService.NavigateTo(ViewModelLocator.ConnectPageKey);	
+				this.navigationService.NavigateTo (ViewModelLocator.ConnectPageKey);	
 			});
 
 			GoToReceivePage = new Command (() => {
-				this.navigationService.NavigateTo(ViewModelLocator.ReceivePageKey);
+				this.navigationService.NavigateTo (ViewModelLocator.ReceivePageKey);
 			});
 
 			GoToMapPage = new Command (() => {
-				this.navigationService.NavigateTo(ViewModelLocator.MapPageKey);
+				this.navigationService.NavigateTo (ViewModelLocator.MapPageKey);
 			});
 
 			GoToScannerPage = new Command (async() => {
+//				this.navigationService.NavigateTo(ViewModelLocator.ScannerPageKey);
 
 				var data = await DependencyService.Get<IScanner> ().Scan ();
 
-				if(data != null){
-					var database = new ECOdatabase();
-					List<WoolworthsItem> resultSet = database.SearchWoolWorthsItem(data);
-				}
+				if (data != null) {
+					var database = new ECOdatabase ();
+					List<WoolworthsItem> resultSet = database.SearchWoolWorthsItem (data);
 
+					CartItem scannedItem = new CartItem(resultSet[0].itemName, resultSet[0].itemPrice);
+					database.InsertItemToCart(scannedItem);
+				}
 			});
 		}
 
-		public void OnAppearing()
+		public void OnAppearing ()
 		{
-//			RaisePropertyChanged
 		}
-    }
+	}
 }

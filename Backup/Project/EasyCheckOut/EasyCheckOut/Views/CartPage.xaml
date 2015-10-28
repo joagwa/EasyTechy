@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<BaseView xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="EasyCheckOut.CartPage"
+			Title="Cart"
+			BackgroundImage="IAB330_Background.png" 
+			BackgroundColor="Transparent">
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Name="Check Out" Order="Primary"/>
+	</ContentPage.ToolbarItems>
+	<StackLayout>
+		<ScrollView>
+			<StackLayout Padding="10">
+				<ListView ItemsSource="{Binding ItemList, Mode=TwoWay}" BackgroundColor="Transparent" >
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="auto"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="3*"/>
+										<ColumnDefinition Width="7*"/>
+									</Grid.ColumnDefinitions>
+									<Label Grid.Row="0" Grid.Column="0" Text="Image" />
+									<Grid Grid.Row="0" Grid.Column="1">
+										<Grid.RowDefinitions>
+											<RowDefinition Height="5*"/>
+											<RowDefinition Height="5*"/>
+										</Grid.RowDefinitions>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="5*"/>
+											<ColumnDefinition Width="5*"/>
+										</Grid.ColumnDefinitions>
+										<Label Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding itemName}" />
+										<Label Grid.Row="1" Grid.Column="0" Text="{Binding itemPrice}" />
+										
+									</Grid>
+								</Grid>
+	
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+				<Button Text="Check" />
+			</StackLayout>
+		</ScrollView>
+	</StackLayout>
+</BaseView>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<BaseView xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="EasyCheckOut.SignupPage"
+			Title="Create an account"
+			BackgroundImage="IAB330_Background.png" 
+			BackgroundColor="Transparent">
+	<StackLayout>
+	<ScrollView VerticalOptions="FillAndExpand">
+	<StackLayout Padding="30" Spacing="20">
+
+		<StackLayout>
+			<Image Source="IAB330 Logo 5.png"  HeightRequest="35"/>
+			<Label Text="Cannot signup" TextColor="Red" IsVisible="{Binding CanNotSignUp}" />
+		</StackLayout>
+
+		<StackLayout>
+			<Label Text="User Name:" HorizontalOptions="Start"/>
+			<Entry Placeholder="Name" Text="{Binding Username}" />
+		</StackLayout>
+
+		<StackLayout>
+			<Label Text="Mobile Number:"/>
+			<Entry Placeholder="Mobile Number" Text="{Binding Mobile}"/>
+		</StackLayout>
+
+		<StackLayout>
+			<Label Text="Email:" />
+			<Entry Placeholder="e.g. example@example.com" Text="{Binding Email}" />
+		</StackLayout>
+
+		<StackLayout>
+			<Label Text="Password:" />
+			<Entry Placeholder="at least 6 characters" Text="{Binding Password}" />
+		</StackLayout>
+
+		<StackLayout>
+			<Label Text="Confirm Password:" />
+			<Entry Placeholder="Confirm your Password" Text="{Binding ConfirmPassword}"/>
+		</StackLayout>
+
+		<StackLayout Padding="0,40,0,0">
+			<Button Text="Create" FontSize="20" TextColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="Green" Command="{Binding CreateAccount}"/>
+		</StackLayout>
+
+	</StackLayout>
+	</ScrollView>
+	</StackLayout>
+</BaseView>
