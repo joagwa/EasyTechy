@@ -39,9 +39,13 @@ namespace EasyCheckOut
 			var database = new ECOdatabase ();
 			database.DeleteAllInBuyList ();
 			database.DeleteAllInCart ();
+			database.DeleteAllInWoolworthsItem ();
+
+			string prefix = Device.OnPlatform("", "", "Images/");
+
 
 			if (database.GetWoolWorthsItemAll ().Count == 0) {
-				WoolworthsItem item1 = new WoolworthsItem ("50375264", "Kleenex Tissues", 2.50);
+				WoolworthsItem item1 = new WoolworthsItem ("50375264", "Kleenex Tissues", 2.50, prefix + "CecilKinross.png");
 				database.InsertItemToWoolWorthsItem (item1);
 			}
 		}

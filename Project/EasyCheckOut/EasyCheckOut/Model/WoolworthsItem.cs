@@ -16,14 +16,17 @@ namespace EasyCheckOut
 
 		public double itemPrice{ get; set; }
 
+		public string itemImage{ get; set; }
+
 		public WoolworthsItem ()
 		{
 		}
 
-		public WoolworthsItem(string itemBarCode, string itemName, double itemPrice){
+		public WoolworthsItem(string itemBarCode, string itemName, double itemPrice, string itemImage){
 			this.itemBarCode = itemBarCode;
 			this.itemName = itemName;
 			this.itemPrice = itemPrice;
+			this.itemImage = itemImage;
 		}
 	}
 }

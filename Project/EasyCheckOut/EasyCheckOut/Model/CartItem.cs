@@ -13,13 +13,16 @@ namespace EasyCheckOut
 
 		public double itemPrice { get; set; }
 
+		public string itemImage { get; set; }
+
 		public CartItem(){
 		}
 
-		public CartItem (string itemName, double itemPrice)
+		public CartItem (string itemName, double itemPrice, string itemImage)
 		{
 			this.itemName = itemName;
 			this.itemPrice = itemPrice;
+			this.itemImage = itemImage;
 		}
 	}
 }

@@ -168,6 +168,7 @@
     <BundleResource Include="Resources\cart.png" />
     <BundleResource Include="Resources\connect.png" />
     <BundleResource Include="Resources\IAB330 Logo 5.png" />
+    <BundleResource Include="Resources\CecilKinross.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

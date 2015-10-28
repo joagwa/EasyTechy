@@ -110,6 +110,11 @@ namespace EasyCheckOut
 			var value = valueList.ToList ();
 			return value;
 		}
+
+		public int DeleteAllInWoolworthsItem ()
+		{
+			return database.DeleteAll<WoolworthsItem> ();
+		}
 			
 	}
 }

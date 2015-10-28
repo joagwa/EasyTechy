@@ -17,13 +17,13 @@ namespace EasyCheckOut.ViewModel
 		{
 			this.navigationService = navigationService;
 
-			ScanItemToCart = new Command (() => {
-				var database = new ECOdatabase();
-
-				CartItem item1 = new CartItem ("Apple", 4.00);
-				database.InsertItemToCart(item1);
-
-			});
+//			ScanItemToCart = new Command (() => {
+//				var database = new ECOdatabase();
+//
+//				CartItem item1 = new CartItem ("Apple", 4.00);
+//				database.InsertItemToCart(item1);
+//
+//			});
 				
 		}
 			
