@@ -86,7 +86,7 @@ namespace EasyCheckOut.ViewModel
 			});
 
 			GoToScannerPage = new Command (async() => {
-//				this.navigationService.NavigateTo(ViewModelLocator.ScannerPageKey);
+				//this.navigationService.NavigateTo(ViewModelLocator.ScannerPageKey);
 
 				var data = await DependencyService.Get<IScanner> ().Scan ();
 
@@ -94,8 +94,13 @@ namespace EasyCheckOut.ViewModel
 					var database = new ECOdatabase ();
 					List<WoolworthsItem> resultSet = database.SearchWoolWorthsItem (data);
 
-					CartItem scannedItem = new CartItem(resultSet[0].itemName, resultSet[0].itemPrice, resultSet[0].itemImage);
-					database.InsertItemToCart(scannedItem);
+					if(resultSet.Count == 1){
+						CartItem scannedItem = new CartItem(resultSet[0].itemName, resultSet[0].itemPrice, resultSet[0].itemImage);
+						database.InsertItemToCart(scannedItem);
+					} else {
+						
+					}
+
 				}
 			});
 		}
