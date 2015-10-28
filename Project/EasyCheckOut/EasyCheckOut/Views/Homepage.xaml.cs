@@ -38,9 +38,8 @@ namespace EasyCheckOut
 //			<ToolbarItem x:Name="LoginToolBar" Name="Login" Order="Primary" Command="{Binding GoToLoginPage}" />
 
 
-
 		}
-
+			
 		protected override void OnAppearing()
 		{
 			var vm = ServiceLocator.Current.GetInstance<HomePageViewModel> ();
@@ -63,10 +62,22 @@ namespace EasyCheckOut
 
 		}
 
-//		void OnTapGestureRecognizerTapped(object sender, EventArgs args) {
-//			var vm = ServiceLocator.Current.GetInstance<HomePageViewModel> ();
-//			vm.GoToLoginPage.Execute();
-//		}
+		async void Scanner(object sender, EventArgs args) {
+			var data = await DependencyService.Get<IScanner> ().Scan ();
+
+			if (data != null) {
+				var database = new ECOdatabase ();
+				List<WoolworthsItem> resultSet = database.SearchWoolWorthsItem (data);
+
+				if(resultSet.Count == 1){
+					CartItem scannedItem = new CartItem(resultSet[0].itemName, resultSet[0].itemPrice, resultSet[0].itemImage);
+					database.InsertItemToCart(scannedItem);
+				} else {
+					DisplayAlert ("Scanner", "No item found", "OK");
+				}
+
+			}
+		}
 
 	
 	}

@@ -54,6 +54,7 @@ namespace EasyCheckOut.ViewModel
 			////{
 			////    // Code runs "for real"
 			////}
+			/// 
 
 			LogOutFunction = new Command (() => {
 				App.LoggedIn = false;
@@ -85,23 +86,8 @@ namespace EasyCheckOut.ViewModel
 				this.navigationService.NavigateTo (ViewModelLocator.MapPageKey);
 			});
 
-			GoToScannerPage = new Command (async() => {
-				//this.navigationService.NavigateTo(ViewModelLocator.ScannerPageKey);
-
-				var data = await DependencyService.Get<IScanner> ().Scan ();
-
-				if (data != null) {
-					var database = new ECOdatabase ();
-					List<WoolworthsItem> resultSet = database.SearchWoolWorthsItem (data);
-
-					if(resultSet.Count == 1){
-						CartItem scannedItem = new CartItem(resultSet[0].itemName, resultSet[0].itemPrice, resultSet[0].itemImage);
-						database.InsertItemToCart(scannedItem);
-					} else {
-						
-					}
-
-				}
+			GoToScannerPage = new Command (() => {
+				
 			});
 		}
 
