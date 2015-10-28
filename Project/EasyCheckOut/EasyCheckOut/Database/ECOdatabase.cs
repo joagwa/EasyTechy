@@ -34,14 +34,7 @@ namespace EasyCheckOut
 				database.CreateTable<WoolworthsItem> ();
 				database.Commit ();
 			}
-
-			//			database.DeleteAll<BuyList>();
-
-			if (GetWoolWorthsItemAll ().Count == 0) {
-				WoolworthsItem item1 = new WoolworthsItem ("50375264", "Kleenex Tissues", 2.50);
-				InsertItemToWoolWorthsItem (item1);
-			}
-
+				
 		}
 
 		//Function for cart item table

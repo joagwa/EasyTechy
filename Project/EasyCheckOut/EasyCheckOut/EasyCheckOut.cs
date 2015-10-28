@@ -39,6 +39,11 @@ namespace EasyCheckOut
 			var database = new ECOdatabase ();
 			database.DeleteAllInBuyList ();
 			database.DeleteAllInCart ();
+
+			if (database.GetWoolWorthsItemAll ().Count == 0) {
+				WoolworthsItem item1 = new WoolworthsItem ("50375264", "Kleenex Tissues", 2.50);
+				database.InsertItemToWoolWorthsItem (item1);
+			}
 		}
 
 		public Page GetHomePage ()
