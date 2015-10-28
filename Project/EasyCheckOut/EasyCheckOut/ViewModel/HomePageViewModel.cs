@@ -2,6 +2,7 @@ using GalaSoft.MvvmLight;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
+using System.Collections.Generic;
 
 namespace EasyCheckOut.ViewModel
 {
@@ -77,8 +78,15 @@ namespace EasyCheckOut.ViewModel
 				this.navigationService.NavigateTo(ViewModelLocator.MapPageKey);
 			});
 
-			GoToScannerPage = new Command (() => {
-				this.navigationService.NavigateTo(ViewModelLocator.ScannerPageKey);
+			GoToScannerPage = new Command (async() => {
+
+				var data = await DependencyService.Get<IScanner> ().Scan ();
+
+				if(data != null){
+					var database = new ECOdatabase();
+					List<WoolworthsItem> resultSet = database.SearchWoolWorthsItem(data);
+				}
+
 			});
 		}
 

@@ -17,40 +17,29 @@ namespace EasyCheckOut
 			database = DependencyService.Get<ISqlite> ().GetConnection ();
 //			database.DeleteAll<CartItem> ();
 			//Create a CartItem table if there is no such table
-//			if (database.TableMappings.All(t => t.MappedType.Name != typeof(CartItem).Name)) {
-////			if (!TableExist("CartItem")){
-//
-//				//Create cartitem table
-//				database.CreateTable<CartItem> ();
-//				database.Commit ();
-//
-//			}
-
-//			if (database.TableMappings.All(t => t.MappedType.Name != typeof(User).Name)) {
-//				//Create user table
-//				database.CreateTable<User> ();
-//				database.Commit ();
-//
-//			}
-
-			if (database.TableMappings.All(t => t.MappedType.Name != typeof(BuyList).Name)) {
-				//Create user table
-				database.CreateTable<BuyList> ();
-				database.Commit ();
-
-//				BuyList item1 = new BuyList(DateTime.Now, "test1");
-//				BuyList item2 = new BuyList(DateTime.Now, "test2");
-//				BuyList item3 = new BuyList(DateTime.Now, "test3");
-
-//				InsertItemToBuyList (item1);
-//				InsertItemToBuyList (item2);
-//				InsertItemToBuyList (item3);
-
-			}
-
-			if (GetCartItemAll () == null) {
+			if (database.TableMappings.All(t => t.MappedType.Name != typeof(CartItem).Name)) {
+				//Create cartitem table
 				database.CreateTable<CartItem> ();
 				database.Commit ();
+			}
+
+			if (database.TableMappings.All(t => t.MappedType.Name != typeof(BuyList).Name)) {
+				//Create cartitem table
+				database.CreateTable<BuyList> ();
+				database.Commit ();
+			}
+
+			if (database.TableMappings.All(t => t.MappedType.Name != typeof(WoolworthsItem).Name)) {
+				//Create cartitem table
+				database.CreateTable<WoolworthsItem> ();
+				database.Commit ();
+			}
+
+//			database.DeleteAll<BuyList>();
+
+			if (GetWoolWorthsItemAll ().Count == 0) {
+				WoolworthsItem item1 = new WoolworthsItem ("50375264", "Kleenex Tissues", 2.50);
+				InsertItemToWoolWorthsItem (item1);
 			}
 
 		}
@@ -67,6 +56,10 @@ namespace EasyCheckOut
 
 		public int DeleteItemInCart(CartItem item){
 			return database.Delete<CartItem>(item.itemID);
+		}
+
+		public int DeleteAllInCart(){
+			return database.DeleteAll<CartItem> ();
 		}
 
 		//Function for user table
@@ -88,6 +81,35 @@ namespace EasyCheckOut
 		public int InsertItemToBuyList(BuyList item){
 			return database.Insert (item);
 		}
+
+		public int DeleteAllInBuyList(){
+			return database.DeleteAll<BuyList> ();
+		}
+
+		//Woolworths items
+		public List<WoolworthsItem> GetWoolWorthsItemAll(){
+			var items = database.Table<WoolworthsItem> ().ToList<WoolworthsItem> ();
+			return items;
+		}
+
+		public int InsertItemToWoolWorthsItem(WoolworthsItem item){
+			return database.Insert (item);
+
+		}
+
+		public List<WoolworthsItem> SearchWoolWorthsItem(string searchTerm){
+//			return database.Table<WoolworthsItem> ().Where (x => x.itemBarCode.Contains (searchTerm)).ToList ();
+
+			var valueList = 
+				from item in database.Table<WoolworthsItem> ()
+			    where item.itemBarCode.Contains (searchTerm)
+                select item;
+			var value = valueList.ToList ();
+			return value;
+		}
+			
+
+
 			
 	}
 }

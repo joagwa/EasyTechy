@@ -30,6 +30,9 @@ namespace EasyCheckOut.ViewModel
 
 		public void OnApperaing()
 		{
+//			var data = await DependencyService.Get<IScanner> ().Scan ();
+
+//			DisplayAlert ("Scanner", data, "cancel");
 			
 		}
 
