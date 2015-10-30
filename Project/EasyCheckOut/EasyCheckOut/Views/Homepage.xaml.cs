@@ -72,6 +72,7 @@ namespace EasyCheckOut
 				if(resultSet.Count == 1){
 					CartItem scannedItem = new CartItem(resultSet[0].itemName, resultSet[0].itemPrice, resultSet[0].itemImage);
 					database.InsertItemToCart(scannedItem);
+					Navigation.PushAsync (new CartPage());
 				} else {
 					DisplayAlert ("Scanner", "No item found", "OK");
 				}
