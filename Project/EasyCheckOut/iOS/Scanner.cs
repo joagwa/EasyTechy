@@ -17,18 +17,45 @@ namespace Scanner.iOS
 			//NOTE: On Android you MUST pass a Context into the Constructor!
 			var scanner = new ZXing.Mobile.MobileBarcodeScanner ();
 
-			var result = await scanner.Scan ();
-//			var result = await scanner.ScanContinuously(
+//			
 
-			if (result != null) {
-				Console.WriteLine ("Scanned Barcode: " + result.Text);
+			scanner.ScanContinuously( HandleScanResult );
 
-				return result.Text;
+//			var result = await scanner.Scan ();
+
+//			if (result != null) {
+//				Console.WriteLine ("Scanned Barcode: " + result.Text);
+//
+//				return result.Text;
+//			} else {
+//				Console.WriteLine ("No barcode scanned");
+////				return "50375264";
+//				return null;
+//			}
+
+
+			return null;
+
+
+		}
+
+		void HandleScanResult(ZXing.Result result)
+		{
+			string msg = "";
+
+			if (result != null && !string.IsNullOrEmpty (result.Text)) {
+				msg = "Found Barcode: " + result.Text;
+				Console.WriteLine (msg);
+			
 			} else {
-				Console.WriteLine ("No barcode scanned");
-//				return "50375264";
-				return null;
+				msg = "Scanning Canceled!";
 			}
+				
+
+//			this.InvokeOnMainThread(() => {
+//				var av = new UIAlertView("Barcode Result", msg, null, "OK", null);
+//				av.Show();
+//			});
 		}
 
 		#endregion
