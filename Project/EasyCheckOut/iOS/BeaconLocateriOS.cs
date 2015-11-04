@@ -1,15 +1,15 @@
 ﻿using System;
-using BeaconDemo;
 using Xamarin.Forms;
-using BeaconDemoiOS;
-using MonoTouch.CoreLocation;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using System.Collections.Generic;
+using CoreLocation;
+using Foundation;
+using UIKit;
+using EasyCheckOut;
+using EasyCheckOut.iOS;
 
 [assembly: Dependency (typeof(BeaconLocateriOS))]
 
-namespace BeaconDemoiOS
+namespace EasyCheckOut
 {
 	public class BeaconLocateriOS : IBeaconLocater
 	{
@@ -87,11 +87,11 @@ namespace BeaconDemoiOS
 			if (e.Region.Identifier.Equals (roximityBeaconId)) {
 				locationManager.StartRangingBeacons (rBeaconRegion);
 				var notification = new UILocalNotification { AlertBody = "Beacons are in range" };
-				UIApplication.SharedApplication.PresentLocationNotificationNow (notification);
+				UIApplication.SharedApplication.PresentLocalNotificationNow (notification);
 			} else if (e.Region.Identifier.Equals (estimoteBeaconId)) {
 				locationManager.StartRangingBeacons (eBeaconRegion);
 				var notification = new UILocalNotification { AlertBody = "Beacons are in range" };
-				UIApplication.SharedApplication.PresentLocationNotificationNow (notification);
+				UIApplication.SharedApplication.PresentLocalNotificationNow (notification);
 			}
 		}
 

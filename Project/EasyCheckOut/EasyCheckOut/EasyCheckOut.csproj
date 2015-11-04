@@ -88,6 +88,11 @@
     <Compile Include="Model\TodoItem.cs" />
     <Compile Include="Helpers\IScanner.cs" />
     <Compile Include="Model\WoolworthsItem.cs" />
+    <Compile Include="Model\BeaconCell.cs" />
+    <Compile Include="Model\BeaconItem.cs" />
+    <Compile Include="Helpers\IBeaconLocater.cs" />
+    <Compile Include="Views\TrackingPage.cs" />
+    <Compile Include="Views\iBeaconPage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.5.0.6447\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

@@ -140,6 +140,7 @@
     <Reference Include="Refractored.Xam.Forms.Vibrate.iOS">
       <HintPath>..\packages\Xam.Plugins.Forms.Vibrate.1.0.0.6\lib\Xamarin.iOS10\Refractored.Xam.Forms.Vibrate.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="MonoTouch.Dialog-1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EasyCheckOut\EasyCheckOut.csproj">
@@ -209,6 +210,7 @@
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Database\SqliteIOS.cs" />
     <Compile Include="Scanner.cs" />
+    <Compile Include="BeaconLocateriOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="ITunesArtwork" />

@@ -50,6 +50,12 @@ namespace EasyCheckOut
 //			var timer = new Timer (1000);
 //			timer.Elapsed += OnTimerElapsed;
 //			timer.Start ();
+
+			Device.StartTimer (new TimeSpan (0, 0, 1), () => {
+				// do something every 60 seconds
+				OnTimerElapsed();
+				return true; // runs again, or false to stop
+			});
 		}
 
 		public void SetBeaconData (List<BeaconItem> beaconCollection)
@@ -59,7 +65,7 @@ namespace EasyCheckOut
 			SetDirectionLabel ();
 		}
 //		public void OnTimerElapsed(object o, ElapsedEventArgs e) {
-		public void OnTimerElapsed(object o) {
+		public void OnTimerElapsed() {
 
 			Device.BeginInvokeOnMainThread (() => {
 				var list = DependencyService.Get<IBeaconLocater>().GetAvailableBeacons();

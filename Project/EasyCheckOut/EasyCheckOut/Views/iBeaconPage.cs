@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace EasyCheckOut
 {
-	public class MainPage : ContentPage
+	public class iBeaconPage : ContentPage
 	{
 		ListView listView;
 		Label searchingLabel;
@@ -17,7 +17,7 @@ namespace EasyCheckOut
 		ObservableCollection<BeaconItem> beaconCollection;
 		TrackingPage trackingPage;
 
-		public MainPage ()
+		public iBeaconPage ()
 		{
 			Title = "Available Beacons";
 
@@ -72,10 +72,15 @@ namespace EasyCheckOut
 //			var timer = new Timer (1000);
 //			timer.Elapsed += OnTimerElapsed;
 //			timer.Start ();
+			Device.StartTimer (new TimeSpan (0, 0, 1), () => {
+				// do something every 60 seconds
+				OnTimerElapsed();
+				return true; // runs again, or false to stop
+			});
 		}
 
 //		public void OnTimerElapsed(object o, ElapsedEventArgs e) {
-		public void OnTimerElapsed(object o) {
+		public void OnTimerElapsed() {
 
 			Device.BeginInvokeOnMainThread (() => {
 				var list = beaconLocater.GetAvailableBeacons();

@@ -29,6 +29,8 @@ namespace EasyCheckOut
 
 			// The root page of your application
 			MainPage = GetHomePage();
+
+//			MainPage = new NavigationPage (new iBeaconPage ());
 		}
 
 		private void Initialize(){
@@ -65,7 +67,7 @@ namespace EasyCheckOut
 			nav.Configure (ViewModelLocator.SignupPageKey, typeof(SignupPage));
 			nav.Configure (ViewModelLocator.BuylistPageKey, typeof(BuylistPage));
 			nav.Configure (ViewModelLocator.CartPageKey, typeof(CartPage));
-			nav.Configure (ViewModelLocator.ConnectPageKey, typeof(ConnectPage));
+			nav.Configure (ViewModelLocator.ConnectPageKey, typeof(iBeaconPage));
 			nav.Configure (ViewModelLocator.MapPageKey, typeof(MapPage));
 			nav.Configure (ViewModelLocator.ReceivePageKey, typeof(ReceivePage));
 			nav.Configure (ViewModelLocator.ScannerPageKey, typeof(ScannerPage));
