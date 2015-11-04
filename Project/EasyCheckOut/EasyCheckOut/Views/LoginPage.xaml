@@ -9,28 +9,29 @@
 
 		<StackLayout>
 			<Image Source="IAB330 Logo 5.png"  HeightRequest="35"/>
-			<Label Text="Login successfully" TextColor="Red" IsVisible="{Binding LoggedIn}" />
-
+			<Label Text="Login Successfully" TextColor="Red" IsVisible="{Binding LoggedIn}" />
+			<Label Text="Login Failed" TextColor="Red" IsVisible="{Binding LoginFailed}" />
+			<ActivityIndicator Color="Red" IsRunning="{Binding IsRunning}" />
 		</StackLayout>
 
 		<StackLayout>
 			<Label Text="User Name :" />
-			<Entry Text="{Binding Username}" HeightRequest="40"/>
+			<Entry Text="{Binding Username}" HeightRequest="40" IsEnabled="{Binding EnableBtn}"/>
 		</StackLayout>
 
 
 		<StackLayout>
 			<Label Text="Password :" />
-			<Entry Text="{Binding Password}" HeightRequest="40" IsPassword="true"/>
+			<Entry Text="{Binding Password}" HeightRequest="40" IsPassword="true" IsEnabled="{Binding EnableBtn}"/>
 		</StackLayout>
 
 		<StackLayout Spacing="0" Padding="0,30,0,0">
-			<Button Text="Log in" TextColor="White" FontSize="20" BackgroundColor="#C9C9C9" HorizontalOptions="FillAndExpand" Command="{Binding Login}"/>
-			<Button Text="Forget your password?" FontSize="16"/>
+			<Button x:Name="LoginBtn" Text="Log in" TextColor="White" FontSize="20" BackgroundColor="#C9C9C9" HorizontalOptions="FillAndExpand" Command="{Binding Login}" IsEnabled="{Binding EnableBtn}"/>
+<!--			<Button Text="Forget your password?" FontSize="16"/>-->
 		</StackLayout>
 
 		<StackLayout>
-			<Button Text="Sign up" TextColor="White" FontSize="20" BackgroundColor="#C9C9C9" HorizontalOptions="FillAndExpand" Command="{Binding GoToSignupPage}" />
+			<Button x:Name="SignupBtn" Text="Sign up" TextColor="White" FontSize="20" BackgroundColor="#C9C9C9" HorizontalOptions="FillAndExpand" Command="{Binding GoToSignupPage}" IsEnabled="{Binding EnableBtn}" />
 		</StackLayout>
 
 <!--		<Label Text="Your Username :" />

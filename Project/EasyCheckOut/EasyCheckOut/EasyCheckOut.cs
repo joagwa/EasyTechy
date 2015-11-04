@@ -10,6 +10,7 @@ namespace EasyCheckOut
 	{
 		public static bool LoggedIn { get; set; }
 		public static bool LoginToolBarIsShow { get; set; }
+		public static bool LoginFailed { get; set; }
 
 		private static ViewModelLocator _locator;
 		private static NavigationService nav;

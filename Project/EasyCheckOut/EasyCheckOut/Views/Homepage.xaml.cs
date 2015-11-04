@@ -9,9 +9,6 @@ namespace EasyCheckOut
 {
 	public partial class Homepage : BaseView
 	{
-		ToolbarItem Logout;
-		ToolbarItem Login;
-
 		public Homepage ()
 		{
 			

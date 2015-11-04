@@ -12,35 +12,36 @@
 		<StackLayout>
 			<Image Source="IAB330 Logo 5.png"  HeightRequest="35"/>
 			<Label Text="Cannot signup" TextColor="Red" IsVisible="{Binding CanNotSignUp}" />
+			<ActivityIndicator Color="Red" IsRunning="{Binding IsRunning}" />
 		</StackLayout>
 
 		<StackLayout>
 			<Label Text="User Name:" HorizontalOptions="Start"/>
-			<Entry Placeholder="Name" Text="{Binding Username}" />
+			<Entry Placeholder="Name" Text="{Binding Username}" IsEnabled="{Binding EnableBtn}" />
 		</StackLayout>
 
 		<StackLayout>
 			<Label Text="Mobile Number:"/>
-			<Entry Placeholder="Mobile Number" Text="{Binding Mobile}"/>
+			<Entry Placeholder="Mobile Number" Text="{Binding Mobile}" IsEnabled="{Binding EnableBtn}" />
 		</StackLayout>
 
 		<StackLayout>
 			<Label Text="Email:" />
-			<Entry Placeholder="e.g. example@example.com" Text="{Binding Email}" />
+			<Entry Placeholder="e.g. example@example.com" Text="{Binding Email}" IsEnabled="{Binding EnableBtn}" />
 		</StackLayout>
 
 		<StackLayout>
 			<Label Text="Password:" />
-			<Entry Placeholder="at least 6 characters" Text="{Binding Password}" />
+			<Entry Placeholder="at least 6 characters" Text="{Binding Password}" IsEnabled="{Binding EnableBtn}" />
 		</StackLayout>
 
 		<StackLayout>
 			<Label Text="Confirm Password:" />
-			<Entry Placeholder="Confirm your Password" Text="{Binding ConfirmPassword}"/>
+			<Entry Placeholder="Confirm your Password" Text="{Binding ConfirmPassword}" IsEnabled="{Binding EnableBtn}" />
 		</StackLayout>
 
 		<StackLayout Padding="0,40,0,0">
-			<Button Text="Create" FontSize="20" TextColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="Green" Command="{Binding CreateAccount}"/>
+			<Button Text="Create" FontSize="20" TextColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="Green" Command="{Binding CreateAccount}" IsEnabled="{Binding EnableBtn}" />
 		</StackLayout>
 
 	</StackLayout>

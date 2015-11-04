@@ -12,7 +12,8 @@
 	<StackLayout>
 		<ScrollView>
 			<StackLayout Padding="10">
-				<ListView ItemsSource="{Binding ItemList, Mode=TwoWay}" BackgroundColor="Transparent" >
+				<Button Text="Scan item" Clicked="Scanner"/>
+				<ListView ItemsSource="{Binding ItemList, Mode=TwoWay}" BackgroundColor="Transparent" VerticalOptions="StartAndExpand">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell>
@@ -46,7 +47,7 @@
 						</DataTemplate>
 					</ListView.ItemTemplate>
 				</ListView>
-				<Button Text="Check" />
+<!--				<Button Text="Check" VerticalOptions="End"/>-->
 			</StackLayout>
 		</ScrollView>
 	</StackLayout>

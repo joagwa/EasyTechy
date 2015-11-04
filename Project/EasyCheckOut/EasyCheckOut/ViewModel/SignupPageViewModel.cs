@@ -68,12 +68,34 @@ namespace EasyCheckOut.ViewModel
 			}
 		}
 
+		private bool isrunning;
+		public bool IsRunning{
+			get { return isrunning;}
+			set{ 
+				isrunning = value;
+				RaisePropertyChanged (() => IsRunning);
+			}
+		}
+
+		private bool enableBtn;
+
+		public bool EnableBtn {
+			get { return enableBtn; }
+			set { 
+				enableBtn = value;
+				RaisePropertyChanged (() => EnableBtn);
+			}
+		}
+
 
 		public SignupPageViewModel (IMyNavigationService navigationService)
 		{
 			this.navigationService = navigationService;
 
 			CreateAccount = new Command (() => {
+
+				IsRunning = true;
+				EnableBtn = false;
 				if(SignupValidate()){
 					// create account
 //					User newUser = new User(Username, Password, Mobile, Email);
@@ -87,8 +109,11 @@ namespace EasyCheckOut.ViewModel
 
 					this.navigationService.NavigateToModal(ViewModelLocator.HomePageKey);
 				}
+				IsRunning = false;
+				EnableBtn = true;;
 			});
-			Azure.MobileService.GetTable<User> ();
+
+//			Azure.MobileService.GetTable<User> ();
 		}
 
 		public bool SignupValidate (){
@@ -103,6 +128,8 @@ namespace EasyCheckOut.ViewModel
 
 		public void OnApperaing()
 		{
+			IsRunning = false;
+			EnableBtn = true;
 			CanNotSignUp = false;
 			Username = null;
 			Mobile = null;
