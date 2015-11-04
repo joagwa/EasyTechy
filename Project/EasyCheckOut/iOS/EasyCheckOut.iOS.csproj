@@ -193,6 +193,9 @@
     <BundleResource Include="Resources\Haribo-Gold-Bears.png" />
     <BundleResource Include="Resources\tissue.png" />
     <BundleResource Include="Resources\bodysheet.png" />
+    <BundleResource Include="Resources\crunchy_nut.jpg" />
+    <BundleResource Include="Resources\Kelloggs-Original.png" />
+    <BundleResource Include="Resources\cocacola-diet.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
