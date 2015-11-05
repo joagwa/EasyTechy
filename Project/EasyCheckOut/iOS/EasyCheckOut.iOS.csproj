@@ -198,6 +198,7 @@
     <BundleResource Include="Resources\crunchy_nut.jpg" />
     <BundleResource Include="Resources\Kelloggs-Original.png" />
     <BundleResource Include="Resources\cocacola-diet.png" />
+    <BundleResource Include="Resources\receipt.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
