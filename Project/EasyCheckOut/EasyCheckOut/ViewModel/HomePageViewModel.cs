@@ -58,6 +58,10 @@ namespace EasyCheckOut.ViewModel
 
 			LogOutFunction = new Command (() => {
 				App.LoggedIn = false;
+
+				var database = new ECOdatabase ();
+				database.DeleteAllInBuyList ();
+
 				this.navigationService.NavigateToModal (ViewModelLocator.HomePageKey);
 			});
 

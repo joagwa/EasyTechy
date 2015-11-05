@@ -32,12 +32,12 @@
 
 		<StackLayout>
 			<Label Text="Password:" />
-			<Entry Placeholder="at least 6 characters" Text="{Binding Password}" IsEnabled="{Binding EnableBtn}" />
+			<Entry Placeholder="at least 6 characters" Text="{Binding Password}" IsEnabled="{Binding EnableBtn}" IsPassword="true" />
 		</StackLayout>
 
 		<StackLayout>
 			<Label Text="Confirm Password:" />
-			<Entry Placeholder="Confirm your Password" Text="{Binding ConfirmPassword}" IsEnabled="{Binding EnableBtn}" />
+			<Entry Placeholder="Confirm your Password" Text="{Binding ConfirmPassword}" IsEnabled="{Binding EnableBtn}" IsPassword="true"/>
 		</StackLayout>
 
 		<StackLayout Padding="0,40,0,0">
